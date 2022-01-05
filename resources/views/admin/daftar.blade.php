@@ -33,8 +33,8 @@ $logo = DB::table('logos')
     </div>
     <div>
         <div class="container-fluid p-0">
-            <div class="row g-0">
-                <div class="col-lg-4">
+            <div class="row g-0 d-flex justify-content-center">
+                <div class="col-lg-5 shadow">
                     <div class="authentication-page-content p-4 d-flex align-items-center min-vh-100">
                         <div class="w-100">
                             <div class="row justify-content-center">

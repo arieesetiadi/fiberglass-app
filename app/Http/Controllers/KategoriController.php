@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class KategoriController extends Controller
 {
@@ -14,6 +15,8 @@ class KategoriController extends Controller
     public function index()
     {
         $data['title'] = 'Kategori';
+        $data['categories'] = DB::table('categories')->orderBy('id', 'DESC')->get();
+
         return view('admin.kategori.index', $data);
     }
 
@@ -35,7 +38,11 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('categories')->insert([
+            'name' => $request->kategori
+        ]);
+
+        return redirect()->route('kategori.index')->with('status', 'Berhasil menambah kategori baru');
     }
 
     /**
@@ -57,7 +64,13 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['title'] = 'Ubah Kategori';
+        $data['categories'] = DB::table('categories')->orderBy('id', 'DESC')->get();
+        $data['category'] = DB::table('categories')
+            ->where('id', $id)
+            ->get()[0];
+
+        return view('admin.kategori.edit', $data);
     }
 
     /**
@@ -69,7 +82,13 @@ class KategoriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::table('categories')
+            ->where('id', $id)
+            ->update([
+                'name' => $request->kategori
+            ]);
+
+        return redirect()->route('kategori.index')->with('status', 'Berhasil mengubah data kategori');
     }
 
     /**
@@ -80,6 +99,10 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('categories')
+            ->where('id', $id)
+            ->delete();
+
+        return redirect()->route('kategori.index')->with('status', 'Berhasil menghapus data kategori');
     }
 }

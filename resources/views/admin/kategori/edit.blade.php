@@ -13,22 +13,23 @@
         </div>
     @endif
 
-    <h1>Kategori</h1>
+    <h1>Ubah Kategori</h1>
 
     <div class="container mt-4">
         <div class="row">
             <div class="col-6">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ route('kategori.store') }}" method="POST">
+                        <form action="{{ route('kategori.update', $category->id) }}" method="POST">
                             @csrf
+                            <input type="hidden" name="_method" value="PUT">
                             {{-- <label for="kategori" class="form-label">Kategori :</label> --}}
                             <div class="d-flex align-content-center">
                                 <input name="kategori" type="text" class="form-control" id="kategori"
-                                    placeholder="Nama kategori" required>
+                                    placeholder="Nama kategori" value="{{ $category->name }}" required>
                                 <div style="width: 5px"></div>
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="bi bi-plus-lg"></i>
+                                    <i class="bi bi-pen"></i>
                                 </button>
                             </div>
                         </form>
