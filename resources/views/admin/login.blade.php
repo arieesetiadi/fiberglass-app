@@ -1,3 +1,10 @@
+@php
+use Illuminate\Support\Facades\DB;
+$logo = DB::table('logos')
+    ->orderBy('id', 'DESC')
+    ->first()->image;
+@endphp
+
 <!doctype html>
 <html lang="en">
 
@@ -35,7 +42,9 @@
                                     <div>
                                         <div class="text-center">
                                             <div>
-                                                <a href="index.html" class="logo"><img src="assets/images/logo-dark.png" height="20" alt="logo"></a>
+                                                <a href="index.html" class="logo"><img
+                                                        src="{{ asset('assets/images/logos/') . '/' . $logo }}"
+                                                        height="50" alt="logo"></a>
                                             </div>
                                             <h4 class="font-size-18 mt-4">Selamat Datang !</h4>
                                             <p class="text-muted">Admin Sinar Sakti Phoenix Fiberglass.</p>
@@ -50,14 +59,14 @@
                                                 <div class="mb-3 auth-form-group-custom mb-4">
                                                     <i class="ri-user-2-line auti-custom-input-icon"></i>
                                                     <label for="username">Username</label>
-                                                    <input name="username" type="text" class="form-control" id="username"
-                                                        placeholder="Masukan username" required>
+                                                    <input name="username" type="text" class="form-control"
+                                                        id="username" placeholder="Masukan username" required>
                                                 </div>
                                                 <div class="mb-3 auth-form-group-custom mb-4">
                                                     <i class="ri-lock-2-line auti-custom-input-icon"></i>
                                                     <label for="userpassword">Password</label>
-                                                    <input name="password" type="password" class="form-control" id="userpassword"
-                                                        placeholder="Masukan password" required>
+                                                    <input name="password" type="password" class="form-control"
+                                                        id="userpassword" placeholder="Masukan password" required>
                                                 </div>
 
                                                 <div class="form-check">
@@ -75,8 +84,8 @@
                                         </div>
 
                                         <div class="mt-5 text-center">
-                                            <p>Belum memiliki akun ? <a href="/daftar"
-                                                    class="fw-medium text-primary"> Daftar </a> </p>
+                                            <p>Belum memiliki akun ? <a href="/daftar" class="fw-medium text-primary">
+                                                    Daftar </a> </p>
                                             <p>
                                         </div>
                                     </div>
