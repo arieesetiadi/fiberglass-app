@@ -53,14 +53,6 @@ $logo = DB::table('logos')
     <link href="{{ asset('assets-2/css/semi-dark.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets-2/css/header-colors.css') }}" rel="stylesheet" />
     <script src="{{ asset('assets-2/js/jquery.min.js') }}"></script>
-
-
-    {{-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>
-        tinymce.init({
-            selector: 'textarea'
-        });
-    </script> --}}
     <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 
     <title>{{ $title ??= 'Title' }} | Phoenix Fiberglass</title>
@@ -109,6 +101,7 @@ $logo = DB::table('logos')
     <script src="{{ asset('assets-2/js/search.js') }}"></script>
     <!--app-->
     <script src="{{ asset('assets-2/js/app.js') }}"></script>
+    <script src="{{ asset('assets-2/js/arsip.js') }}"></script>
     {{-- <script src="{{ asset('assets-2/js/index2.js') }}"></script> --}}
 
     {{-- show/hide password --}}

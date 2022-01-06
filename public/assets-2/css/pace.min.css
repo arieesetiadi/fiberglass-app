@@ -1,3 +1,7 @@
+.hide {
+    opacity: 30%;
+    transition: ease 1s;
+}
 .pace {
     -webkit-pointer-events: none;
     pointer-events: none;

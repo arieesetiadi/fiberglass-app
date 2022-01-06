@@ -93,7 +93,8 @@
                                                     <td>{{ $product->created_at }}</td>
                                                     <td>{{ $product->updated_at ??= '-' }}</td>
                                                     <td>
-                                                        <form action="#" class="d-inline-block" method="GET">
+                                                        <form action="{{ route('produk.edit', $product->id) }}"
+                                                            class="d-inline-block" method="GET">
                                                             <button type="submit" class="btn d-inline-block">
                                                                 <i class="bi bi-pen"></i>
                                                             </button>

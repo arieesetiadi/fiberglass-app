@@ -21,16 +21,11 @@ use App\Http\Controllers\KategoriController;
 */
 
 Route::get('/', function () {
-    dd(
-        Str::of('* ARie SetIadi')->trim('* ')->lower()->replace(' ', '-')
-    );
-    dd(
-        now()->format('Y-m-d h:i:s')
-    );
     return view('welcome');
 });
 
 Route::get('/get-ip', [GeoController::class, 'getIP']);
+Route::get('/toggle-arsip', [ProdukController::class, 'toggleArsip'])->name('toggle-arsip');
 
 // Route Auth
 Route::get('/logout', [AuthController::class, 'logoutProses'])->name('logout');

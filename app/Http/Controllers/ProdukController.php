@@ -98,7 +98,16 @@ class ProdukController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['title'] = 'Ubah Produk';
+        $data['categories'] = DB::table('categories')->get();
+        $data['product'] = DB::table('products')
+            ->where('products.id', $id)
+            ->get()[0];
+        $data['images'] = DB::table('product_images')
+            ->where('product_id', $id)
+            ->get();
+
+        return view('admin.produk.edit', $data);
     }
 
     /**
@@ -138,5 +147,16 @@ class ProdukController extends Controller
             ->paginate(50);
 
         return view('admin.produk.index', $data);
+    }
+
+    public function toggleArsip(Request $request)
+    {
+        $image = DB::table('product_images')
+            ->where('id', $request->id)
+            ->update([
+                'is_hide' => $request->isHide
+            ]);
+
+        return response()->json($image);
     }
 }
