@@ -33,7 +33,7 @@
                             </div>
                         </form>
                         <hr>
-                        <table class="table">
+                        <table class="table table-sm">
                             <tr>
                                 <th>#</th>
                                 <th>Kategori</th>

@@ -1,11 +1,13 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\GeoController;
-use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\ProdukController;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GeoController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\KategoriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    dd(route('produk.index'));
+    dd(
+        Str::of('* ARie SetIadi')->trim('* ')->lower()->replace(' ', '-')
+    );
+    dd(
+        now()->format('Y-m-d h:i:s')
+    );
     return view('welcome');
 });
 
@@ -41,6 +48,7 @@ Route::get('/settings', [AdminController::class, 'settings'])->name('settings');
 Route::post('/ganti-logo', [AdminController::class, 'gantiLogo'])->name('ganti-logo');
 
 // Route Produk
+Route::get('/produk/search/', [ProdukController::class, 'search'])->name('produk.search');
 Route::resource('/produk', ProdukController::class);
 
 // Route Kategori

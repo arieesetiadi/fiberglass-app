@@ -1,9 +1,18 @@
 @extends('admin.layout.template')
 
 @section('content')
-    <h1>Produk</h1>
-
-    <div class="container mt-4">
+    @if (session('status'))
+        <div class="alert alert-dismissible alert-success d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+                <use xlink:href="#check-circle-fill" />
+            </svg>
+            <div>
+                {{ session('status') }}
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    <div class="container">
         <div class="row">
             <div class="col-lg-3 col-sm-12">
                 <div class="card radius-10">
@@ -11,7 +20,7 @@
                         <div class="d-flex align-items-center">
                             <div class="">
                                 <p class="mb-1">Produk</p>
-                                <h4 class="mb-0 text-pink">542</h4>
+                                <h4 class="mb-0 text-pink">{{ $counts }}</h4>
                             </div>
                             <div class="ms-auto fs-2 text-pink">
                                 <i class="bi bi-box"></i>
@@ -25,7 +34,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <ul class="nav nav-tabs nav-danger" role="tablist">
+                        <ul class="nav nav-tabs nav-light d-flex justify-content-between" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link active" data-bs-toggle="tab" href="#dangerhome" role="tab"
                                     aria-selected="true">
@@ -36,148 +45,77 @@
                                     </div>
                                 </a>
                             </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" data-bs-toggle="tab" href="#dangerprofile" role="tab"
-                                    aria-selected="false">
-                                    <div class="d-flex align-items-center">
-                                        <div class="tab-icon"><i class='bi bi-box font-18 me-1'></i>
-                                        </div>
-                                        <div class="tab-title">Fiberglass</div>
+                            <a class="nav-link border" href="{{ route('produk.create') }}">
+                                <div class="d-flex align-items-center">
+                                    <div class="tab-icon"><i class="bi bi-plus-lg"></i>
                                     </div>
-                                </a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" data-bs-toggle="tab" href="#dangercontact" role="tab"
-                                    aria-selected="false">
-                                    <div class="d-flex align-items-center">
-                                        <div class="tab-icon"><i class='bi bi-box font-18 me-1'></i>
-                                        </div>
-                                        <div class="tab-title">Yacht & Boat</div>
-                                    </div>
-                                </a>
-                            </li>
+                                </div>
+                            </a>
                         </ul>
-                        <div class="tab-content py-3">
+                        <div class="tab-content pt-3">
                             <div class="tab-pane fade show active" id="dangerhome" role="tabpanel">
                                 <div class="d-flex align-items-center">
-                                    <h5 class="mb-0">Order Table</h5>
-                                    <form class="ms-auto position-relative">
+                                    <h5 class="mb-0">Tabel Produk</h5>
+                                    <form action="{{ route('produk.search') }}" method="GET"
+                                        class="ms-auto position-relative">
                                         <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i
                                                 class="bi bi-search"></i></div>
-                                        <input class="form-control ps-5" type="text" placeholder="search">
+                                        <input name="search" class="form-control ps-5" type="text" placeholder="search">
                                     </form>
                                 </div>
                                 <div class="table-responsive mt-3">
-                                    <table class="table align-middle mb-0">
-                                        <thead class="table-light">
+                                    <table class="table table-sm align-middle mb-0">
+                                        <thead>
                                             <tr>
-                                                <th>Product</th>
-                                                <th>Photo</th>
-                                                <th>Product ID</th>
-                                                <th>Status</th>
-                                                <th>Amount</th>
-                                                <th>Date</th>
-                                                <th>Shipping</th>
+                                                <th>#</th>
+                                                <th>Nama</th>
+                                                <th>Stok</th>
+                                                <th>Kategori</th>
+                                                <th>Dibuat Oleh</th>
+                                                <th>Dibuat Pada</th>
+                                                <th>Diubah Pada</th>
+                                                <th>
+                                                    <span class="mx-4 d-inline-block">Aksi</span>
+                                                </th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Sport Shoes</td>
-                                                <td><img src="assets/images/products/01.png" class="product-img-2"
-                                                        alt="product img"></td>
-                                                <td>#9405822</td>
-                                                <td><span class="badge bg-light-success text-success w-100">Paid</span></td>
-                                                <td>$1250.00</td>
-                                                <td>03 Feb 2020</td>
-                                                <td>
-                                                    <div class="progress" style="height: 5px;">
-                                                        <div class="progress-bar bg-success" role="progressbar"
-                                                            style="width: 100%"></div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>Man Headcap</td>
-                                                <td><img src="assets/images/products/02.png" class="product-img-2"
-                                                        alt="product img"></td>
-                                                <td>#8304620</td>
-                                                <td><span class="badge bg-light-warning text-warning w-100">Pending</span>
-                                                </td>
-                                                <td>$1500.00</td>
-                                                <td>05 Feb 2020</td>
-                                                <td>
-                                                    <div class="progress" style="height: 5px;">
-                                                        <div class="progress-bar bg-warning" role="progressbar"
-                                                            style="width: 60%"></div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>Sunglass</td>
-                                                <td><img src="assets/images/products/03.png" class="product-img-2"
-                                                        alt="product img"></td>
-                                                <td>#4736890</td>
-                                                <td><span class="badge bg-light-danger text-danger w-100">Failed</span></td>
-                                                <td>$1400.00</td>
-                                                <td>06 Feb 2020</td>
-                                                <td>
-                                                    <div class="progress" style="height: 5px;">
-                                                        <div class="progress-bar bg-danger" role="progressbar"
-                                                            style="width: 70%"></div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>Shirt Formal</td>
-                                                <td><img src="assets/images/products/04.png" class="product-img-2"
-                                                        alt="product img"></td>
-                                                <td>#8543765</td>
-                                                <td><span class="badge bg-light-success text-success w-100">Paid</span></td>
-                                                <td>$1200.00</td>
-                                                <td>14 Feb 2020</td>
-                                                <td>
-                                                    <div class="progress" style="height: 5px;">
-                                                        <div class="progress-bar bg-success" role="progressbar"
-                                                            style="width: 100%"></div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Black Coat Pant</td>
-                                                <td><img src="assets/images/products/06.png" class="product-img-2"
-                                                        alt="product img"></td>
-                                                <td>#9629240</td>
-                                                <td><span class="badge bg-light-warning text-warning w-100">Pending</span>
-                                                </td>
-                                                <td>$1500.00</td>
-                                                <td>18 Feb 2020</td>
-                                                <td>
-                                                    <div class="progress" style="height: 5px;">
-                                                        <div class="progress-bar bg-warning" role="progressbar"
-                                                            style="width: 60%"></div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Heals</td>
-                                                <td><img src="assets/images/products/05.png" class="product-img-2"
-                                                        alt="product img"></td>
-                                                <td>#8506790</td>
-                                                <td><span class="badge bg-light-danger text-danger w-100">Failed</span></td>
-                                                <td>$1800.00</td>
-                                                <td>21 Feb 2020</td>
-                                                <td>
-                                                    <div class="progress" style="height: 5px;">
-                                                        <div class="progress-bar bg-danger" role="progressbar"
-                                                            style="width: 40%"></div>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            @forelse ($products as $product)
+                                                <tr>
+                                                    {{-- <td><img src="{{ asset('assets/images/users/avatar-1.jpg') }}"
+                                                        class="product-img-2" alt="product img"></td>
+                                                        <td>#9405822</td> --}}
+                                                    <td>{{ $products->firstItem() + $loop->index }}</td>
+                                                    <td>{{ $product->name }}</td>
+                                                    <td>{{ $product->stock }}</td>
+                                                    <td>{{ $product->category }}</td>
+                                                    <td>{{ $product->user }}</td>
+                                                    <td>{{ $product->created_at }}</td>
+                                                    <td>{{ $product->updated_at ??= '-' }}</td>
+                                                    <td>
+                                                        <form action="#" class="d-inline-block" method="GET">
+                                                            <button type="submit" class="btn d-inline-block">
+                                                                <i class="bi bi-pen"></i>
+                                                            </button>
+                                                        </form>
+                                                        <form action="#" class="d-inline-block" method="POST">
+                                                            @csrf
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            <button onclick="return confirm('Produk ini akan dihapus')"
+                                                                type="submit" class="btn d-inline-block">
+                                                                <i class="bi bi-trash-fill"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @empty
+                                                <h6>Data Produk Tidak Tersedia.</h6>
+                                            @endforelse
                                         </tbody>
                                     </table>
+                                    <div class="mt-4 d-flex justify-content-center">
+                                        <p>{{ $products->links() }}</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="dangerprofile" role="tabpanel">

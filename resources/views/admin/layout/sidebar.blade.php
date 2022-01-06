@@ -2,10 +2,10 @@
 <aside class="semi-dark sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            <img src="{{ asset('assets/images/logos/') . '/' . $logo }}" class="logo-icon" alt="logo icon">
+            <img src="{{ asset('assets/images/logos/') . '/' . $logo }}" class="logo-icon rounded" alt="logo icon">
         </div>
         <div>
-            <h5 class="logo-text">Phoenix</h5>
+            <h5 class="logo-text">Fiberglass</h5>
         </div>
         <div class="toggle-icon ms-auto"> <i class="bi bi-list"></i>
         </div>

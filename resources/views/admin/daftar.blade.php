@@ -42,9 +42,9 @@ $logo = DB::table('logos')
                                     <div>
                                         <div class="text-center">
                                             <div>
-                                                <a href="index.html" class="logo"><img
+                                                <a href="/" class="logo"><img
                                                         src="{{ asset('assets/images/logos/') . '/' . $logo }}"
-                                                        height="50" alt="logo"></a>
+                                                        height="65" alt="logo" class="rounded"></a>
                                             </div>
 
                                             <h4 class="font-size-18 mt-4">Daftar akun</h4>

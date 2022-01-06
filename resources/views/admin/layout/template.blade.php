@@ -52,6 +52,16 @@ $logo = DB::table('logos')
     <link href="{{ asset('assets-2/css/light-theme.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets-2/css/semi-dark.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets-2/css/header-colors.css') }}" rel="stylesheet" />
+    <script src="{{ asset('assets-2/js/jquery.min.js') }}"></script>
+
+
+    {{-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea'
+        });
+    </script> --}}
+    <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 
     <title>{{ $title ??= 'Title' }} | Phoenix Fiberglass</title>
 </head>
@@ -85,7 +95,6 @@ $logo = DB::table('logos')
     <!-- Bootstrap bundle JS -->
     <script src="{{ asset('assets-2/js/bootstrap.bundle.min.js') }}"></script>
     <!--plugins-->
-    <script src="{{ asset('assets-2/js/jquery.min.js') }}"></script>
     {{-- <script src="{{ asset('assets-2/plugins/simplebar/js/simplebar.min.js') }}"></script> --}}
     <script src="{{ asset('assets-2/plugins/metismenu/js/metisMenu.min.js') }}"></script>
     {{-- <script src="{{ asset('assets-2/plugins/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script> --}}
