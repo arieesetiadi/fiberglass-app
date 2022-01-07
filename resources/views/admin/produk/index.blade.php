@@ -99,7 +99,8 @@
                                                                 <i class="bi bi-pen"></i>
                                                             </button>
                                                         </form>
-                                                        <form action="#" class="d-inline-block" method="POST">
+                                                        <form action="{{ route('produk.destroy', $product->id) }}"
+                                                            class="d-inline-block" method="POST">
                                                             @csrf
                                                             <input type="hidden" name="_method" value="DELETE">
                                                             <button onclick="return confirm('Produk ini akan dihapus')"

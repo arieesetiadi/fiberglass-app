@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redis;
 
 class ProdukController extends Controller
@@ -119,7 +120,36 @@ class ProdukController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $slug = Str::of($request->name)->lower()->replace(' ', '-');
+        DB::table('products')
+            ->where('id', $id)
+            ->update([
+                'name' => $request->name,
+                'slug' => $slug,
+                'stock' => $request->stock,
+                'description' => $request->description,
+                'category_id' => $request->category,
+                'user_id' => auth()->user()->id,
+                'updated_at' => now()->toDateTimeString()
+            ]);
+
+        if ($request->file('images')) {
+            $images = $request->file('images');
+
+            foreach ($images as $image) {
+                $imageName = time() . ' ' . strtolower($image->getClientOriginalName());
+                $image->move('assets/images/products/', $imageName);
+
+                DB::table('product_images')->insert([
+                    'image' => $imageName,
+                    'is_hide' => false,
+                    'product_id' => $id,
+                    'created_at' => now()->toDateTimeString()
+                ]);
+            }
+        }
+
+        return redirect()->back()->with('status', 'Berhasil mengubah data produk');
     }
 
     /**
@@ -130,7 +160,22 @@ class ProdukController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $images = DB::table('product_images')->where('product_id', $id);
+        $product = DB::table('products')->where('id', $id);
+
+        if (count($images->get()) > 0) {
+            foreach ($images->get() as $image) {
+                $path = public_path('assets/images/products') . '/' . $image->image;
+                if (File::exists($path)) {
+                    File::delete($path);
+                }
+            }
+        }
+
+        $images->delete();
+        $product->delete();
+
+        return redirect()->route('produk.index')->with('status', 'Berhasil manghapus data produk');
     }
 
     public function search(Request $request)
@@ -158,5 +203,20 @@ class ProdukController extends Controller
             ]);
 
         return response()->json($image);
+    }
+
+    public function hapusGambar($id)
+    {
+        $image = DB::table('product_images')->where('id', $id);
+        $path = public_path('assets/images/products') . '/' . $image->get()[0]->image;
+
+        if (File::exists($path)) {
+            // dd('Exist');
+            File::delete($path);
+        }
+
+        $image->delete();
+
+        return back()->with('status', 'Berhasil menghapus gambar produk');
     }
 }

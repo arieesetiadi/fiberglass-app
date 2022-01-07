@@ -1,6 +1,17 @@
 @extends('admin.layout.template')
 
 @section('content')
+    @if (session('status'))
+        <div class="alert alert-dismissible alert-success d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+                <use xlink:href="#check-circle-fill" />
+            </svg>
+            <div>
+                {{ session('status') }}
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -9,8 +20,10 @@
                         <h6>Form Ubah Produk</h6>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('produk.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('produk.update', $product->id) }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
                             <div class="mb-3">
                                 <label for="name" class="form-label">Nama Produk :</label>
                                 <input name="name" type="text" class="form-control" id="name" placeholder="Nama produk"
@@ -48,12 +61,10 @@
                                     rows="4">{{ $product->description }}</textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="images" class="form-label">Upload Foto Produk :</label>
-                                <input name="images[]" class="form-control" type="file" id="images" multiple
-                                    onchange="loadProductsImage()">
+                                <label for="images" class="form-label">Gambar Produk Saat Ini :</label>
                             </div>
                             <div class="mb-3">
-                                <div class="row images-preview-wrapper d-flex align-items-end">
+                                <div class="row d-flex align-items-end">
                                     @forelse ($images as $image)
                                         <div class="col-3 d-flex my-3 justify-content-center">
                                             <div>
@@ -70,12 +81,33 @@
                                                         data-id="{{ $image->id }}"
                                                         data-url="{{ route('toggle-arsip') }}">
                                                     <label class="form-check-label">Arsip</label>
+                                                    <a href="{{ route('produk.hapus-gambar', $image->id) }}"
+                                                        class="text-dark mx-3"
+                                                        onclick="return confirm('Gambar akan dihapus')">
+                                                        <i class="bi bi-trash"></i>
+                                                        Hapus
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
                                     @empty
                                         <div></div>
                                     @endforelse
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="images" class="form-label">Tambah Gambar Produk Lagi :</label>
+                                <div class="d-flex align-items-center">
+                                    <input name="images[]" class="form-control" type="file" id="images" multiple
+                                        onchange="loadProductsImage()">
+                                    <div class="mx-1"></div>
+                                    <a role="button" class="btn btn-danger" onclick="resetInputFiles()">
+                                        <i class="bi bi-arrow-repeat"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="row images-preview-wrapper d-flex align-items-end">
                                 </div>
                             </div>
                             <div class="mb-3">
@@ -105,17 +137,34 @@
 
                 fReader.onload = function(e) {
                     productImagesStr = `
-                    <div class="col-4 d-flex my-3 justify-content-center">
-                        <center>
-                            <img width="80%" src="${e.target.result}"
-                                class="img-fluid d-block" alt="">
-                            <small>${imageFile.name}</small>
-                        </center>
+                    <div id="new${i}" class="image-preview-wrapper col-4 d-flex my-3 justify-content-center">
+                        <div>
+                            <center>
+                                <img width="80%" src="${e.target.result}"
+                                    class="img-fluid d-block" alt="">
+                                <small>${imageFile.name}</small>
+                            </center>
+                            
+                        </div>
                     </div>
                     `;
 
                     $('.images-preview-wrapper').append(productImagesStr);
                 }
+            }
+            // <a role="button" class="hapus-gambar text-dark mx-3"
+            //                     onclick="hapusGambar('${i}')"
+            //                     data-target="${imageFile.name}">
+            //                     <i class="bi bi-trash"></i>
+            //                     Hapus
+            //                 </a>
+
+        }
+
+        function resetInputFiles() {
+            if (confirm('Input file akan dikosongkan')) {
+                $('#images').val('');
+                $('.image-preview-wrapper').remove();
             }
         }
     </script>

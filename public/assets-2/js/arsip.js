@@ -1,5 +1,4 @@
 $(function () {
-    console.log("Test");
     // Fungsi arsip
     $(".arsip-switch").change(function () {
         let id = $(this).data("id");

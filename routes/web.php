@@ -43,6 +43,7 @@ Route::get('/settings', [AdminController::class, 'settings'])->name('settings');
 Route::post('/ganti-logo', [AdminController::class, 'gantiLogo'])->name('ganti-logo');
 
 // Route Produk
+Route::get('/produk/hapus-gambar/{id}', [ProdukController::class, 'hapusGambar'])->name('produk.hapus-gambar');
 Route::get('/produk/search/', [ProdukController::class, 'search'])->name('produk.search');
 Route::resource('/produk', ProdukController::class);
 
