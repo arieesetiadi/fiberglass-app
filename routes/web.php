@@ -1,13 +1,12 @@
 <?php
 
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GeoController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\VisitorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,11 +18,7 @@ use App\Http\Controllers\KategoriController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
+// Custom Routes
 Route::get('/get-ip', [GeoController::class, 'getIP']);
 Route::get('/toggle-arsip', [ProdukController::class, 'toggleArsip'])->name('toggle-arsip');
 
@@ -52,3 +47,7 @@ Route::resource('/kategori', KategoriController::class);
 
 
 // Route Visitor ================
+Route::get('/', [VisitorController::class, 'home'])->name('home');
+
+// Route Category
+Route::get('/produk/kategori/{idKategori}', [VisitorController::class, 'kategori'])->name('produk.kategori');
