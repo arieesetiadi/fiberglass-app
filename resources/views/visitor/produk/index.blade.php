@@ -1,7 +1,14 @@
 @extends('visitor.layout.template')
 
 @section('content')
-    <div class="container py-5">
+    <div class="container py-4">
+        <div class="row mb-3">
+            <div class="col">
+                <center>
+                    <h1 class="h2 text-dark">{{ $title }}</h1>
+                </center>
+            </div>
+        </div>
         <div class="row">
             @forelse ($products->unique('id') as $product)
                 <div class="col-lg-3 p-1">

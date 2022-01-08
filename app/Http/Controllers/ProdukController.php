@@ -88,7 +88,16 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
-        dd($id);
+        $data['title'] = 'Detail Produk';
+        $data['categories'] = DB::table('categories')->get();
+        $data['product'] = DB::table('products')
+            ->where('products.id', $id)
+            ->get()[0];
+        $data['images'] = DB::table('product_images')
+            ->where('product_id', $id)
+            ->get();
+
+        return view('visitor.produk.show', $data);
     }
 
     /**
