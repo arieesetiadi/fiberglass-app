@@ -31,11 +31,19 @@ $logo = DB::table('logos')
     <link rel="stylesheet" href="{{ asset('assets-3/rev-slider/css/layers.css') }}">
     <link rel="stylesheet" href="{{ asset('assets-3/rev-slider/css/navigation.css') }}">
     <link rel="stylesheet" href="{{ asset('assets-3/rev-slider/css/settings.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         .mySlides {
             display: none
+        }
+
+        article p {
+            text-align: justify;
+            line-height: 25px;
         }
 
     </style>
@@ -89,13 +97,14 @@ $logo = DB::table('logos')
                         <nav id="mainnav" class="mainnav">
                             <ul class="menu">
                                 <li>
-                                    <a href="index.html" class="active">Home</a>
+                                    <a href="index.html">Home</a>
                                 </li>
                                 <li>
                                     <a href="#">Products</a>
                                     <ul class="sub-menu row" style="width: 500px">
                                         @foreach ($categories as $category)
-                                            <li class="col-6"><a
+                                            <li class="col-6">
+                                                <a
                                                     href="{{ route('produk.kategori', $category->id) }}">{{ $category->name }}</a>
                                             </li>
                                         @endforeach

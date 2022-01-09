@@ -93,6 +93,9 @@ class ProdukController extends Controller
         $data['product'] = DB::table('products')
             ->where('products.id', $id)
             ->get()[0];
+        $data['category'] = DB::table('categories')
+            ->where('id', $data['product']->category_id)
+            ->get()[0];
         $data['images'] = DB::table('product_images')
             ->where('product_id', $id)
             ->get();
