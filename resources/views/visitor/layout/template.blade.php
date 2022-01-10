@@ -47,8 +47,6 @@ $logo = DB::table('logos')
         }
 
     </style>
-
-    <link href="icon/favicon.ico" rel="shortcut icon">
 </head>
 
 <body class="counter-scroll">
@@ -57,26 +55,15 @@ $logo = DB::table('logos')
             <div class="row">
                 <div class="col-md-8 col-12 d-lg-flex align-items-center">
                     <ul class="flat-information flat-information-type1">
-                        <li class="phone"><a href="#" title="Phone">+00 568 468 428</a></li>
-                        <li class="email"><a href="#" title="Email">softcase@gmail.com</a></li>
+                        <li class="email"><a href="{{ route('login') }}" title="Email">Administrator</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 col-12 d-flex justify-content-md-end justify-content-center">
-                    <div id="quik-search-btn" class="show-search">
-                        <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                    </div>
-                    <div class="dlab-quik-search">
-                        <form action="#">
-                            <input name="search" value="" type="text" class="form-control"
-                                placeholder="Type to search">
-                            <span id="quik-search-remove"><i class="fa fa-times" aria-hidden="true"></i></span>
-                        </form>
-                    </div>
                     <div class="language-name">
-                        <a href="#">English</a>
+                        <a href="#">Indonesian</a>
                         <ul class="list-chooser">
-                            <li><a href="#" class="active">English</a></li>
-                            <li><a href="#">France</a></li>
+                            <li><a href="#" class="active">Indonesian</a></li>
+                            <li><a href="#">English</a></li>
                         </ul>
                     </div>
                 </div>
@@ -97,10 +84,10 @@ $logo = DB::table('logos')
                         <nav id="mainnav" class="mainnav">
                             <ul class="menu">
                                 <li>
-                                    <a href="index.html">Home</a>
+                                    <a href="/">Home</a>
                                 </li>
                                 <li>
-                                    <a href="#">Products</a>
+                                    <a href="#">Produk</a>
                                     <ul class="sub-menu row" style="width: 500px">
                                         @foreach ($categories as $category)
                                             <li class="col-6">
@@ -133,7 +120,7 @@ $logo = DB::table('logos')
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">Contact</a>
+                                    <a href="{{ route('kontak') }}">Kontak</a>
                                 </li>
                             </ul>
                         </nav>
@@ -153,97 +140,12 @@ $logo = DB::table('logos')
     {{-- End Content --}}
 
     <footer id="footer" class="footer footer-bg-3">
-        <div class="overlay"></div>
-        <div id="footer-widget" class="footer-widget-type2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="widget-text">
-                            <div class="logo"><img src="{{ asset('assets-3/images/logo/02.png') }}"
-                                    alt="images"></div>
-                            <p>
-                                Ut enim ad minim veniam, quis nostrud commodo consequat. Duis aute irure proident,
-                                sunt
-                                in culpa.
-                            </p>
-                            <div class="socials-list">
-                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-md-6">
-                        <div class="mg-widget-mobi kcl-widget2">
-                            <h3 class="widget widget-title">All IT Services</h3>
-                            <div class="widget-services d-sm-flex">
-                                <ul class="one-half first">
-                                    <li><a href="#">Managed IT</a></li>
-                                    <li><a href="#">IT Support</a></li>
-                                    <li><a href="#">IT Consultancy</a></li>
-                                    <li><a href="#">Cloud Computing</a></li>
-                                    <li><a href="#">Cyber Security</a></li>
-                                    <li><a href="#">Custom Software</a></li>
-                                </ul>
-                                <ul class="one-half second">
-                                    <li><a href="#">Banking</a></li>
-                                    <li><a href="#">Capital Markets</a></li>
-                                    <li><a href="#">Enter Technology</a></li>
-                                    <li><a href="#">Manufacturing</a></li>
-                                    <li><a href="#">Healthcare</a></li>
-                                    <li><a href="#">Higher Education</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="mg-widget-mobi kcl-widget">
-                            <h3 class="widget widget-title">Lastest News</h3>
-                            <div class="widget-latest-news">
-                                <ul>
-                                    <li>
-                                        <div class="thumb-image">
-                                            <img src="{{ asset('assets-3/images/footer/01.jpg') }}" alt="images">
-                                        </div>
-                                        <div class="thumb-content">
-                                            <h4 class="thumb-title"><a href="#">Improving lives technology
-                                                    lighthouse project</a></h4>
-                                            <p class="thumb-day">May 25, 2020</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="thumb-image">
-                                            <img src="{{ asset('assets-3/images/footer/02.jpg') }}" alt="images">
-                                        </div>
-                                        <div class="thumb-content">
-                                            <h4 class="thumb-title"><a href="#">Improving lives technology
-                                                    lighthouse project</a></h4>
-                                            <p class="thumb-day">May 25, 2020</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="thumb-image">
-                                            <img src="{{ asset('assets-3/images/footer/03.jpg') }}" alt="images">
-                                        </div>
-                                        <div class="thumb-content">
-                                            <h4 class="thumb-title"><a href="#">Improving lives technology
-                                                    lighthouse project</a></h4>
-                                            <p class="thumb-day">May 25, 2020</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div id="bottom" class="bottom-type3 position-relative">
             <div class="container">
                 <div class="bottom-wrap text-center">
                     <div id="copyright">
-                        <a href="#">Copyright © 2020 Softo.</a><span class="license"> All Rights
+                        <a href="/">Copyright © {{ now()->year }} Sinar Sakti Phoenix Fiberglass</a><span
+                            class="license"> All Rights
                             Reserved</span>
                     </div>
                 </div>

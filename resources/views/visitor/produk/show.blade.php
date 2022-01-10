@@ -12,12 +12,12 @@
         <div class="row">
             <div class="col-lg-12">
                 <h6>
-                    <span class="text-primary">Produk</span>
+                    <span class="font-weight-bold">Produk</span>
                     >
                     <a href="{{ route('produk.kategori', $category->id) }}"
                         class="text-primary">{{ $category->name }}</a>
                     >
-                    <span class="text-dark">{{ $product->name }}</span>
+                    <span class="text-primary">{{ $product->name }}</span>
                 </h6>
             </div>
         </div>

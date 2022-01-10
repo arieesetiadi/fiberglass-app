@@ -20,9 +20,9 @@
                         <div class="d-flex align-items-center">
                             <div class="">
                                 <p class="mb-1">Produk</p>
-                                <h4 class="mb-0 text-pink">{{ $counts }}</h4>
+                                <h4 class="mb-0 text-primary">{{ $counts }}</h4>
                             </div>
-                            <div class="ms-auto fs-2 text-pink">
+                            <div class="ms-auto fs-2 text-primary">
                                 <i class="bi bi-box"></i>
                             </div>
                         </div>

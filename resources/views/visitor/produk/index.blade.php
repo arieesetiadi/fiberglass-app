@@ -1,12 +1,22 @@
 @extends('visitor.layout.template')
 
 @section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h6>
+                    <span class="font-weight-bold">Produk</span>
+                    >
+                    <a href="{{ route('produk.kategori', $category->id) }}"
+                        class="text-primary">{{ $category->name }}</a>
+                </h6>
+            </div>
+        </div>
+    </div>
     <div class="container py-4">
-        <div class="row mb-3">
+        <div class="row">
             <div class="col">
-                <center>
-                    <h1 class="h2 text-dark">{{ $title }}</h1>
-                </center>
+                <h1 class="h1 text-dark mb-5">{{ $title }}</h1>
             </div>
         </div>
         <div class="row">
@@ -14,12 +24,24 @@
                 <div class="col-lg-3 p-1">
                     <div class="card" style="width: 18rem;">
                         <div class="p-5">
-                            <img src="{{ asset('assets/images/products/') . '/' . ($product->image ??= 'default.png') }}"
-                                class="card-img-top" alt="{{ $product->name }}">
+                            @php
+                                $cover = DB::table('product_images')
+                                    ->where('product_id', $product->id)
+                                    ->where('is_hide', false)
+                                    ->get();
+                            @endphp
+
+                            @if (count($cover) > 0)
+                                <img src="{{ asset('assets/images/products/') . '/' . $cover[0]->image }}"
+                                    class="card-img-top" alt="{{ $product->name }}">
+                            @else
+                                <img src="{{ asset('assets/images/products/') . '/' . 'default.png' }}"
+                                    class="card-img-top" alt="{{ $product->name }}">
+                            @endif
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ $product->name }}</h5>
-                            <p class="card-text">Stok : {{ $product->stock }}</p>
+                            <h5 class="card-text mb-3">Stok : {{ $product->stock }}</h5>
                             <a href="{{ route('produk.show', $product->id) }}" class="btn btn-primary">Detail</a>
                         </div>
                     </div>

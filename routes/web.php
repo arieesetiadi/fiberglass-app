@@ -51,3 +51,6 @@ Route::get('/', [VisitorController::class, 'home'])->name('home');
 
 // Route Category
 Route::get('/produk/kategori/{idKategori}', [VisitorController::class, 'kategori'])->name('produk.kategori');
+
+// Route Kontak
+Route::get('/kontak', [VisitorController::class, 'kontak'])->name('kontak');

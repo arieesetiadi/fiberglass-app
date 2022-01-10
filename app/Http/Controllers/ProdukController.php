@@ -6,7 +6,6 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Redis;
 
 class ProdukController extends Controller
 {
@@ -98,6 +97,7 @@ class ProdukController extends Controller
             ->get()[0];
         $data['images'] = DB::table('product_images')
             ->where('product_id', $id)
+            ->where('is_hide', false)
             ->get();
 
         return view('visitor.produk.show', $data);

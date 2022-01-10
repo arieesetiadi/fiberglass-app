@@ -8,7 +8,8 @@
                     <!-- Slide 1 -->
                     <li data-transition="random">
                         <!-- Main Image -->
-                        <img src="images/rev-slider/01.jpg" alt="" data-bgposition="center center" data-no-retina>
+                        <img src="{{ asset('assets-2/images/gallery/01.png') }}" alt="" data-bgposition="center center"
+                            data-no-retina>
                         <div class="overlay"></div>
 
                         <!-- Layers -->
@@ -43,75 +44,8 @@
                             data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="2200"
                             data-splitin="none" data-splitout="none" data-responsive_offset="on">Let us provide the
                             support you deserve.</div>
-
-                        <div class="tp-caption btn-text btn-linear hv-linear-gradient"
-                            data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                            data-y="['middle','middle','middle','middle']" data-voffset="['155','160','120','130']"
-                            data-width="full" data-height="none" data-whitespace="normal" data-transform_idle="o:1;"
-                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                            data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="2800"
-                            data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                            <a href="#" class="all-solution font-style linear-color border-corner">All Solution<span
-                                    class="icon-arrow-pointing-to-right"></span></a>
-                            <a href="#" class="see-video">See live video</a>
-                        </div>
                     </li>
                     <!-- /End Slide 1 -->
-
-                    <!-- Slide 2 -->
-                    <li data-transition="random">
-                        <!-- Main Image -->
-                        <img src="images/rev-slider/01.jpg" alt="" data-bgposition="center center" data-no-retina>
-                        <div class="overlay"></div>
-
-                        <!-- Layers -->
-                        <div class="tp-caption tp-resizeme text-white text-one"
-                            data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                            data-y="['middle','middle','middle','middle']" data-voffset="['-162','-175','-160','-190']"
-                            data-fontsize="['55','55','35','26']" data-lineheight="['82','82','50','38']" data-width="full"
-                            data-height="none" data-whitespace="normal" data-transform_idle="o:1;"
-                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                            data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="1000"
-                            data-splitin="none" data-splitout="none" data-responsive_offset="on">IT services built</div>
-
-                        <div class="tp-caption tp-resizeme text-white text-two"
-                            data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                            data-y="['middle','middle','middle','middle']" data-voffset="['-38','-40','-60','-80']"
-                            data-fontsize="['70','70','55','42']" data-lineheight="['82','82','70','54']" data-width="full"
-                            data-height="none" data-whitespace="normal" data-transform_idle="o:1;"
-                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                            data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="1600"
-                            data-splitin="none" data-splitout="none" data-responsive_offset="on">Specifically for<br>
-                            your business.</div>
-
-                        <div class="tp-caption tp-resizeme text-white btn-three"
-                            data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                            data-y="['middle','middle','middle','middle']" data-voffset="['83','80','40','40']"
-                            data-fontsize="['19','19','17','16']" data-lineheight="['30','30','28','28']" data-width="full"
-                            data-height="none" data-whitespace="normal" data-transform_idle="o:1;"
-                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                            data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="2200"
-                            data-splitin="none" data-splitout="none" data-responsive_offset="on">Let us provide the
-                            support you deserve.</div>
-
-                        <div class="tp-caption btn-text btn-linear hv-linear-gradient"
-                            data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                            data-y="['middle','middle','middle','middle']" data-voffset="['155','160','120','130']"
-                            data-width="full" data-height="none" data-whitespace="normal" data-transform_idle="o:1;"
-                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                            data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                            data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="2800"
-                            data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                            <a href="#" class="all-solution font-style linear-color border-corner">All Solution<span
-                                    class="icon-arrow-pointing-to-right"></span></a>
-                            <a href="#" class="see-video">See live video</a>
-                        </div>
-                    </li>
-                    <!-- /End Slide 2 -->
                 </ul>
             </div>
         </div>
