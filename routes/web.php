@@ -48,9 +48,8 @@ Route::resource('/kategori', KategoriController::class);
 
 // Route Visitor ================
 Route::get('/', [VisitorController::class, 'home'])->name('home');
-
-// Route Category
 Route::get('/produk/kategori/{idKategori}', [VisitorController::class, 'kategori'])->name('produk.kategori');
-
-// Route Kontak
 Route::get('/kontak', [VisitorController::class, 'kontak'])->name('kontak');
+Route::get('/job', [VisitorController::class, 'job'])->name('job');
+Route::get('/investor', [VisitorController::class, 'investor'])->name('investor');
+Route::get('/about', [VisitorController::class, 'about'])->name('about');

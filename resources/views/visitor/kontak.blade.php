@@ -68,4 +68,36 @@
         </div>
     </div>
     <hr>
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <div>
+                    <h6>Google Maps :</h6>
+                    <div class="mapouter">
+                        <div class="gmap_canvas"><iframe width="1000" height="400" id="gmap_canvas"
+                                src="https://maps.google.com/maps?ll=-8.539165299999999,115.1662531&q=Warung MB Mengwi&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                                href="https://techwithlove.com/how-to-know-if-someone-blocked-you-on-whatsapp/">Tech With
+                                Love</a></div>
+                        <style>
+                            .mapouter {
+                                position: relative;
+                                text-align: right;
+                                height: 400px;
+                                width: 1000px;
+                            }
+
+                            .gmap_canvas {
+                                overflow: hidden;
+                                background: none !important;
+                                height: 400px;
+                                width: 1000px;
+                            }
+
+                        </style>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

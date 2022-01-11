@@ -98,26 +98,13 @@ $logo = DB::table('logos')
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">Case study</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="#">Case study</a></li>
-                                        <li><a href="#">Case details</a></li>
-                                    </ul>
+                                    <a href="{{ route('investor') }}">Investor Relationship</a>
                                 </li>
                                 <li>
-                                    <a href="#">Blog</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="#">Blog</a></li>
-                                        <li><a href="#">Blog details</a></li>
-                                    </ul>
+                                    <a href="{{ route('job') }}">Job Vacancy</a>
                                 </li>
                                 <li>
-                                    <a href="#">Pages</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="#">About</a></li>
-                                        <li><a href="#">FAQ</a></li>
-                                        <li><a href="#">Team members</a></li>
-                                    </ul>
+                                    <a href="{{ route('about') }}">Tentang Kami</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('kontak') }}">Kontak</a>

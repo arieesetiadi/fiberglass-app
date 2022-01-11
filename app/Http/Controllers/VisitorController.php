@@ -45,7 +45,31 @@ class VisitorController extends Controller
     {
         $data['title'] = 'Kontak';
         $data['categories'] = DB::table('categories')->get();
-        
+
         return view('visitor.kontak', $data);
+    }
+
+    public function about()
+    {
+        $data['title'] = 'Tentang Kami';
+        $data['categories'] = DB::table('categories')->get();
+
+        return view('visitor.about', $data);
+    }
+
+    public function investor()
+    {
+        $data['title'] = 'Investor Relationship';
+        $data['categories'] = DB::table('categories')->get();
+
+        return view('visitor.investor', $data);
+    }
+
+    public function job()
+    {
+        $data['title'] = 'Job Vacancy';
+        $data['categories'] = DB::table('categories')->get();
+
+        return view('visitor.job', $data);
     }
 }
