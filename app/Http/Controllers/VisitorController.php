@@ -8,6 +8,8 @@ class VisitorController extends Controller
 {
     public function home()
     {
+        GeoController::storeVisitor();
+
         $data['title'] = 'Home';
         $data['categories'] = DB::table('categories')->get();
 
@@ -49,12 +51,13 @@ class VisitorController extends Controller
         return view('visitor.kontak', $data);
     }
 
-    public function about()
+    public function about($kategori)
     {
-        $data['title'] = 'Tentang Kami';
+        $data['title'] = $kategori;
+        $kategori = str_replace(' ', '-', strtolower($kategori));
         $data['categories'] = DB::table('categories')->get();
 
-        return view('visitor.about', $data);
+        return view('visitor.about.' . $kategori, $data);
     }
 
     public function investor()
@@ -71,5 +74,10 @@ class VisitorController extends Controller
         $data['categories'] = DB::table('categories')->get();
 
         return view('visitor.job', $data);
+    }
+
+    public function download()
+    {
+        dd('Download');
     }
 }

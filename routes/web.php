@@ -19,7 +19,7 @@ use App\Http\Controllers\VisitorController;
 |
 */
 // Custom Routes
-Route::get('/get-ip', [GeoController::class, 'getIP']);
+Route::get('/store-visitor', [GeoController::class, 'storeVisitor'])->name('store-visitor');
 Route::get('/toggle-arsip', [ProdukController::class, 'toggleArsip'])->name('toggle-arsip');
 
 // Route Auth
@@ -52,4 +52,5 @@ Route::get('/produk/kategori/{idKategori}', [VisitorController::class, 'kategori
 Route::get('/kontak', [VisitorController::class, 'kontak'])->name('kontak');
 Route::get('/job', [VisitorController::class, 'job'])->name('job');
 Route::get('/investor', [VisitorController::class, 'investor'])->name('investor');
-Route::get('/about', [VisitorController::class, 'about'])->name('about');
+Route::get('/about/{kategori}', [VisitorController::class, 'about'])->name('about');
+Route::get('/download', [VisitorController::class, 'download'])->name('download');

@@ -87,7 +87,7 @@ $logo = DB::table('logos')
                                     <a href="/">Home</a>
                                 </li>
                                 <li>
-                                    <a href="#">Produk</a>
+                                    <a href="#">Products</a>
                                     <ul class="sub-menu row" style="width: 500px">
                                         @foreach ($categories as $category)
                                             <li class="col-6">
@@ -104,10 +104,37 @@ $logo = DB::table('logos')
                                     <a href="{{ route('job') }}">Job Vacancy</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('about') }}">Tentang Kami</a>
+                                    <a href="#">About Us</a>
+                                    <ul class="sub-menu row" style="width: 350px">
+                                        <li class="col-6">
+                                            <a href="{{ route('about', 'FAQ') }}">FAQ</a>
+                                        </li>
+                                        <li class="col-6">
+                                            <a href="{{ route('about', 'Fiberglass') }}">Fiberglass</a>
+                                        </li>
+                                        <li class="col-6">
+                                            <a href="{{ route('about', 'Yacht') }}">Yacht</a>
+                                        </li>
+                                        <li class="col-6">
+                                            <a href="{{ route('about', 'Kancing') }}">Kancing</a>
+                                        </li>
+                                        <li class="col-6">
+                                            <a href="{{ route('about', 'Gallery') }}">Gallery</a>
+                                        </li>
+                                        <li class="col-6">
+                                            <a href="{{ route('about', 'Event') }}">Event</a>
+                                        </li>
+                                        <li class="col-6">
+                                            <a href="{{ route('about', 'Our Client') }}">Our Client</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
-                                    <a href="{{ route('kontak') }}">Kontak</a>
+                                    <a href="{{ route('kontak') }}">Contact</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="{{ route('download') }}" title="Download Our Brochure">
+                                        <i class="fas fa-cloud-download-alt fa-2x"></i></a>
                                 </li>
                             </ul>
                         </nav>
@@ -127,12 +154,28 @@ $logo = DB::table('logos')
     {{-- End Content --}}
 
     <footer id="footer" class="footer footer-bg-3">
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-lg-3">
+                    <a href="/" title="Logo" class="mb-2"><img width="100px"
+                            src="{{ asset('assets/images/logos/') . '/' . $logo }}" data-width="30" alt="images"
+                            data-retina="{{ asset('assets/images/logos/') . '/' . $logo }}"></a>
+                </div>
+                <div class="col-lg-9 col-md-6 d-flex align-items-center">
+                    <h6>
+                        <strong>Information</strong> : "Pengunjung hari ini berjumlah <strong>20</strong> orang,
+                        pengunjung
+                        bulan Januari 2022 berjumlah <strong>100</strong> orang.
+                    </h6>
+                </div>
+            </div>
+        </div>
         <div id="bottom" class="bottom-type3 position-relative">
             <div class="container">
                 <div class="bottom-wrap text-center">
                     <div id="copyright">
-                        <a href="/">Copyright © {{ now()->year }} Sinar Sakti Phoenix Fiberglass</a><span
-                            class="license"> All Rights
+                        <a class="text-secondary" href="/">Copyright © {{ now()->year }} Sinar Sakti Phoenix
+                            Fiberglass</a><span class="license"> All Rights
                             Reserved</span>
                     </div>
                 </div>
@@ -212,7 +255,13 @@ $logo = DB::table('logos')
             x[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " w3-red";
         }
+
+        let height = screen.height;
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.4/js/bootstrap.js"
+        integrity="sha512-Jp3bCw/xkeMs5f1y6U/ytOnQC+X0Xny7ZZlStxH4BAwUvG0TeCM1ZNnZGreBrnNYbWQQcSknDDtnYybCNSVOVA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>

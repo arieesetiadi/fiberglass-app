@@ -14,6 +14,11 @@ class AdminController extends Controller
 
     public function index()
     {
+        $data['countProducts'] = DB::table('products')->count();
+        $data['countGallery'] = 100;
+        $data['countUsers'] = DB::table('users')->count();
+        $data['visitors'] = DB::table('visitors')->paginate(25);
+
         $data['title'] = 'Dashboard';
         return view('admin.index', $data);
     }
