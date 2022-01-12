@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GeoController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\KategoriController;
+use Carbon\CarbonPeriod;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,18 @@ use App\Http\Controllers\KategoriController;
 
 Route::get('/info', function () {
     phpinfo();
+    // $geo = geoip()->getLocation();
+
+    // for ($i = 0; $i < 100; $i++) {
+    //     DB::table('visitors')->insert([
+    //         'ip' => $geo->ip,
+    //         'country' => $geo->country,
+    //         'city' => $geo->city,
+    //         'state' => $geo->state_name,
+    //         'time_zone' => $geo->timezone,
+    //         'created_at' => now()->subDays(rand(0, 40))->toDateString()
+    //     ]);
+    // }
 });
 
 // Custom Routes
@@ -59,6 +73,7 @@ Route::resource('/gallery', GalleryController::class);
 // Route Visitor ================
 Route::get('/', [VisitorController::class, 'home'])->name('home');
 Route::get('/produk/kategori/{idKategori}', [VisitorController::class, 'kategori'])->name('produk.kategori');
+Route::get('/produk/detail/{id}', [VisitorController::class, 'productDetail'])->name('product-detail');
 Route::get('/kontak', [VisitorController::class, 'kontak'])->name('kontak');
 Route::get('/job', [VisitorController::class, 'job'])->name('job');
 Route::get('/investor', [VisitorController::class, 'investor'])->name('investor');

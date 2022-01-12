@@ -92,20 +92,20 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
-        $data['title'] = 'Detail Produk';
-        $data['categories'] = DB::table('categories')->get();
-        $data['product'] = DB::table('products')
-            ->where('products.id', $id)
-            ->get()[0];
-        $data['category'] = DB::table('categories')
-            ->where('id', $data['product']->category_id)
-            ->get()[0];
-        $data['images'] = DB::table('product_images')
-            ->where('product_id', $id)
-            ->where('is_hide', false)
-            ->get();
+        // $data['title'] = 'Detail Produk';
+        // $data['categories'] = DB::table('categories')->get();
+        // $data['product'] = DB::table('products')
+        //     ->where('products.id', $id)
+        //     ->get()[0];
+        // $data['category'] = DB::table('categories')
+        //     ->where('id', $data['product']->category_id)
+        //     ->get()[0];
+        // $data['images'] = DB::table('product_images')
+        //     ->where('product_id', $id)
+        //     ->where('is_hide', false)
+        //     ->get();
 
-        return view('visitor.produk.show', $data);
+        // return view('visitor.produk.show', $data);
     }
 
     /**

@@ -130,8 +130,9 @@
         </div>
     </section><!-- who-we-are -->
     <section class="fact-type2">
-        <div class="container d-flex justify-content-lg-between justify-content-center flex-lg-nowrap flex-wrap">
-            <div class="counter counter-type2">
+        <h1 class="text-center text-dark font-weight-bold">JUMLAH PENGUNJUNG</h1>
+        <div class="container mt-5 d-flex justify-content-lg-between justify-content-center flex-lg-nowrap flex-wrap">
+            {{-- <div class="counter counter-type2">
                 <div class="content-counter hv-background-before">
                     <div class="icon-count"><span class="icon-team"></span></div>
                     <div class="numb-count-wrap">
@@ -141,35 +142,35 @@
                     </div>
                     <div class="name-count">Happy Clients</div>
                 </div>
-            </div>
+            </div> --}}
             <div class="counter counter-type2">
                 <div class="content-counter hv-background-before">
                     <div class="icon-count"><span class="icon-portfolio"></span></div>
                     <div class="numb-count-wrap">
-                        <span class="numb-count" data-from="0" data-to="934" data-speed="2000"
-                            data-inviewport="yes">934</span>
+                        <span class="numb-count" data-from="0" data-to="{{ $totalVisitors }}" data-speed="2000"
+                            data-inviewport="yes">{{ $totalVisitors }}</span>
                     </div>
-                    <div class="name-count">Finished Project</div>
+                    <div class="name-count">Total</div>
                 </div>
             </div>
             <div class="counter counter-type2">
                 <div class="content-counter hv-background-before">
                     <div class="icon-count"><span class="icon-observation"></span></div>
                     <div class="numb-count-wrap">
-                        <span class="numb-count" data-from="0" data-to="534" data-speed="2000"
-                            data-inviewport="yes">534</span>
+                        <span class="numb-count" data-from="0" data-to="{{ $todayVisitors }}" data-speed="2000"
+                            data-inviewport="yes">{{ $todayVisitors }}</span>
                     </div>
-                    <div class="name-count">Skilled Experts</div>
+                    <div class="name-count">Hari Ini</div>
                 </div>
             </div>
             <div class="counter counter-type2">
                 <div class="content-counter hv-background-before">
                     <div class="icon-count"><span class="icon-spam"></span></div>
                     <div class="numb-count-wrap">
-                        <span class="numb-count" data-from="0" data-to="438" data-speed="2000"
-                            data-inviewport="yes">438</span>
+                        <span class="numb-count" data-from="0" data-to="{{ $monthVisitors }}" data-speed="2000"
+                            data-inviewport="yes">{{ $monthVisitors }}</span>
                     </div>
-                    <div class="name-count">Media Posts</div>
+                    <div class="name-count">Bulan Ini</div>
                 </div>
             </div>
         </div>
@@ -182,7 +183,7 @@
                 <div class="f-text text-white">Are you ready for a better,</div>
                 <div class="s-text text-white">More productive business?</div>
                 <div class="flat-contact-now btn-linear hv-linear-gradient">
-                    <a href="#" class="font-style linear-color border-corner">Contact Now<span
+                    <a href="{{ route('kontak') }}" class="font-style linear-color border-corner">Contact Now<span
                             class="icon-arrow-pointing-to-right"></span></a>
                 </div>
             </div>
@@ -191,12 +192,4 @@
             <div class="circle-border circle-border3 none-767"></div>
         </div>
     </section><!-- cta -->
-    <div class="flat-it-services flat-it-services-style1">
-        <div class="container">
-            <div class="title-section text-center">
-                <p class="sub-title">Services</p>
-                <h2 class="flat-title">Managed IT services<br> for your industry</h2>
-            </div>
-        </div>
-    </div><!-- flat-it-services -->
 @endsection

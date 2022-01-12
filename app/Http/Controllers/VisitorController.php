@@ -6,11 +6,23 @@ use Illuminate\Support\Facades\DB;
 
 class VisitorController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
     public function home()
     {
         GeoController::storeVisitor();
 
         $data['title'] = 'Home';
+        $data['totalVisitors'] = DB::table('visitors')->count();
+        $data['todayVisitors'] = DB::table('visitors')
+            ->whereDate('created_at', now()->toDateString())
+            ->count();
+        $data['monthVisitors'] = DB::table('visitors')
+            ->whereMonth('created_at', now()->month)
+            ->count();
         $data['categories'] = DB::table('categories')->get();
 
         return view('visitor.home', $data);
@@ -43,6 +55,24 @@ class VisitorController extends Controller
         return view('visitor.produk.index', $data);
     }
 
+    public function productDetail($id)
+    {
+        $data['title'] = 'Detail Produk';
+        $data['categories'] = DB::table('categories')->get();
+        $data['product'] = DB::table('products')
+            ->where('products.id', $id)
+            ->get()[0];
+        $data['category'] = DB::table('categories')
+            ->where('id', $data['product']->category_id)
+            ->get()[0];
+        $data['images'] = DB::table('product_images')
+            ->where('product_id', $id)
+            ->where('is_hide', false)
+            ->get();
+
+        return view('visitor.produk.show', $data);
+    }
+
     public function kontak()
     {
         $data['title'] = 'Kontak';
@@ -63,6 +93,8 @@ class VisitorController extends Controller
     public function investor()
     {
         $data['title'] = 'Investor Relationship';
+        $data['investors'] = DB::table('investors')->where('status', null)->get();
+        $data['investorsSoon'] = DB::table('investors')->where('status', 'soon')->get();
         $data['categories'] = DB::table('categories')->get();
 
         return view('visitor.investor', $data);
