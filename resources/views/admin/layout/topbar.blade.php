@@ -33,14 +33,14 @@
                          <li>
                              <hr class="dropdown-divider">
                          </li>
-                         <li>
+                         {{-- <li>
                              <a class="dropdown-item" href="#">
                                  <div class="d-flex align-items-center">
                                      <div class=""><i class="bi bi-person-fill"></i></div>
                                      <div class="ms-3"><span>Profile</span></div>
                                  </div>
                              </a>
-                         </li>
+                         </li> --}}
                          <li>
                              <a class="dropdown-item" href="{{ route('settings') }}">
                                  <div class="d-flex align-items-center">

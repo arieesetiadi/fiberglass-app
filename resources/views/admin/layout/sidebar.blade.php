@@ -35,6 +35,14 @@
                 <div class="menu-title">Kategori</div>
             </a>
         </li>
+
+        <li>
+            <a href="{{ route('gallery.index') }}" class="" aria-expanded="true">
+                <div class="parent-icon"><i class="bi bi-images"></i>
+                </div>
+                <div class="menu-title">Gallery</div>
+            </a>
+        </li>
     </ul>
     <!--end navigation-->
 </aside>

@@ -1,12 +1,14 @@
 <?php
 
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GeoController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProdukController;
-use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\VisitorController;
+use App\Http\Controllers\KategoriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +20,11 @@ use App\Http\Controllers\VisitorController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/info', function () {
+    phpinfo();
+});
+
 // Custom Routes
 Route::get('/store-visitor', [GeoController::class, 'storeVisitor'])->name('store-visitor');
 Route::get('/toggle-arsip', [ProdukController::class, 'toggleArsip'])->name('toggle-arsip');
@@ -44,6 +51,9 @@ Route::resource('/produk', ProdukController::class);
 
 // Route Kategori
 Route::resource('/kategori', KategoriController::class);
+
+// Route Gallery
+Route::resource('/gallery', GalleryController::class);
 
 
 // Route Visitor ================

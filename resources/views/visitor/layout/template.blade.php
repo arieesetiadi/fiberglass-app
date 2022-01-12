@@ -154,7 +154,7 @@ $logo = DB::table('logos')
     {{-- End Content --}}
 
     <footer id="footer" class="footer footer-bg-3">
-        <div class="container">
+        {{-- <div class="container">
             <div class="row py-5">
                 <div class="col-lg-3">
                     <a href="/" title="Logo" class="mb-2"><img width="100px"
@@ -169,7 +169,7 @@ $logo = DB::table('logos')
                     </h6>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div id="bottom" class="bottom-type3 position-relative">
             <div class="container">
                 <div class="bottom-wrap text-center">
