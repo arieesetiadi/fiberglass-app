@@ -22,21 +22,6 @@
                     <div class="get-in-touch get-in-touch-type1">
                         <div class="text-contact">Jangan ragu untuk <a>menghubungi kami untuk informasi
                                 apapun.</a></div>
-                        <div class="info-contact">
-                            <p>
-                                <a target="_blank" href="https://www.youtube.com">
-                                    <img width="35px" src="{{ asset('assets/images/icons/youtube.png') }}" alt="Youtube">
-                                    Youtube
-                                </a>
-                            </p>
-                            <p>
-                                <a target="_blank" href="https://www.twitch.com">
-                                    <img width="35px" src="{{ asset('assets/images/icons/twitch (1).png') }}"
-                                        alt="Twitch">
-                                    Twitch
-                                </a>
-                            </p>
-                        </div>
                     </div>
                 </div>
                 <div class="col-lg-7 mb-5">
@@ -68,12 +53,29 @@
         </div>
     </div>
     <hr>
+    <div class="container">
+        <h1 class="text-center h3 text-dark my-5">Social Media</h1>
+        <div class="row">
+            @foreach ($socials as $social)
+                <div class="col-lg-3">
+                    <center>
+                        <a href="{{ $social->url }}">
+                            <img width="50px" src="{{ asset('assets/images/icons/') . '/' . $social->type . '.png' }}"
+                                alt="{{ $social->type }}">
+                            <small class="text-center d-block mt-2">{{ $social->name }}</small>
+                        </a>
+                    </center>
+                </div>
+            @endforeach
+        </div>
+    </div>
+    <hr>
     <div class="container mb-5">
         <div class="row">
             <div class="col-lg-12 d-flex justify-content-center">
                 <div>
-                    <h6>Google Maps :</h6>
-                    <div class="mapouter">
+                    <h1 class="text-center text-dark h3">Our Location</h1>
+                    <div class="mapouter my-5">
                         <div class="gmap_canvas"><iframe width="1000" height="400" id="gmap_canvas"
                                 src="https://maps.google.com/maps?ll=-8.539165299999999,115.1662531&q=Warung MB Mengwi&t=&z=16&ie=UTF8&iwloc=&output=embed"
                                 frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a

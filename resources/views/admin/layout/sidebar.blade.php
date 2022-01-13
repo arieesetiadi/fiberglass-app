@@ -43,6 +43,22 @@
                 <div class="menu-title">Gallery</div>
             </a>
         </li>
+
+        <li>
+            <a href="{{ route('produk.arsip') }}" class="" aria-expanded="true">
+                <div class="parent-icon"><i class="bi bi-card-image"></i>
+                </div>
+                <div class="menu-title">Gambar Arsip</div>
+            </a>
+        </li>
+
+        <li>
+            <a href="{{ route('social.index') }}" class="" aria-expanded="true">
+                <div class="parent-icon"><i class="bi bi-whatsapp"></i>
+                </div>
+                <div class="menu-title">Sosial Media</div>
+            </a>
+        </li>
     </ul>
     <!--end navigation-->
 </aside>

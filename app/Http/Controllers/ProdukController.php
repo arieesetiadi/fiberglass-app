@@ -236,4 +236,12 @@ class ProdukController extends Controller
 
         return back()->with('status', 'Berhasil menghapus gambar produk');
     }
+
+    public function arsip()
+    {
+        $data['title'] = 'Arsip';
+        $data['arsips'] = DB::table('product_images')->where('is_hide', true)->get();
+
+        return view('admin.produk.arsip', $data);
+    }
 }

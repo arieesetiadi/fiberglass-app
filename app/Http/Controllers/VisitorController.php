@@ -72,6 +72,7 @@ class VisitorController extends Controller
     {
         $data['title'] = 'Kontak';
         $data['categories'] = DB::table('categories')->get();
+        $data['socials'] = DB::table('socials')->get();
 
         return view('visitor.kontak', $data);
     }

@@ -34,7 +34,6 @@ $logo = DB::table('logos')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         .mySlides {
@@ -75,11 +74,25 @@ $logo = DB::table('logos')
                 </div>
                 <div class="col-md-4 col-12 d-flex justify-content-md-end justify-content-center">
                     <div class="language-name">
-                        <a href="#">Indonesian</a>
+                        <div class="col-lg-12" id="google_translate_element">
+                        </div>
+                        <script type="text/javascript">
+                            // <![CDATA[
+                            function googleTranslateElementInit() {
+                                new google.translate.TranslateElement({
+                                    // pageLanguage: 'id',
+                                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                                }, 'google_translate_element');
+                            }
+                            // ]]>
+                        </script>
+                        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript">
+                        </script>
+                        {{-- <a href="#">Indonesian</a>
                         <ul class="list-chooser">
                             <li><a href="#" class="active">Indonesian</a></li>
                             <li><a href="#">English</a></li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
             </div>
@@ -149,7 +162,8 @@ $logo = DB::table('logos')
                                 </li>
                                 <li>
                                     <a target="_blank" href="{{ route('download') }}" title="Download Our Brochure">
-                                        <i class="fas fa-cloud-download-alt fa-2x"></i></a>
+                                        <i class="fas fa-cloud-download-alt fa-2x"></i>
+                                    </a>
                                 </li>
                             </ul>
                         </nav>
@@ -278,7 +292,18 @@ $logo = DB::table('logos')
         integrity="sha512-Jp3bCw/xkeMs5f1y6U/ytOnQC+X0Xny7ZZlStxH4BAwUvG0TeCM1ZNnZGreBrnNYbWQQcSknDDtnYybCNSVOVA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    {{-- <script src="//code.tidio.co/rvenr93aokkcmgsmakhbchgqwfclhvn4.js" async></script> --}}
+    {{-- <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+            }, 'google_translate_element');
+        }
+    </script> --}}
+
 </body>
 
 </html>

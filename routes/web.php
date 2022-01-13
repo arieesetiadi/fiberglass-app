@@ -10,6 +10,7 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\SocialController;
 use Carbon\CarbonPeriod;
 
 /*
@@ -61,6 +62,7 @@ Route::post('/ganti-logo', [AdminController::class, 'gantiLogo'])->name('ganti-l
 // Route Produk
 Route::get('/produk/hapus-gambar/{id}', [ProdukController::class, 'hapusGambar'])->name('produk.hapus-gambar');
 Route::get('/produk/search/', [ProdukController::class, 'search'])->name('produk.search');
+Route::get('/produk/arsip', [ProdukController::class, 'arsip'])->name('produk.arsip');
 Route::resource('/produk', ProdukController::class);
 
 // Route Kategori
@@ -68,6 +70,9 @@ Route::resource('/kategori', KategoriController::class);
 
 // Route Gallery
 Route::resource('/gallery', GalleryController::class);
+
+// Route Social
+Route::resource('/social', SocialController::class);
 
 
 // Route Visitor ================
