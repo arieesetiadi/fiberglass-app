@@ -19,6 +19,9 @@
         <div class="row">
             <div class="col-6">
                 <div class="card">
+                    <div class="card-header bg-white">
+                        Kategori Produk
+                    </div>
                     <div class="card-body">
                         <form action="{{ route('kategori.store') }}" method="POST">
                             @csrf

@@ -65,6 +65,7 @@
                                 </a>
                             </li>
                         </ul>
+                        
                         <div class="tab-content pt-3">
                             <div class="tab-pane fade show active" id="dangerhome" role="tabpanel">
                                 <div class="d-flex align-items-center">
@@ -100,7 +101,7 @@
                                         </tbody>
                                     </table>
                                     <div class="mt-4 d-flex justify-content-center">
-                                        <p></p>
+                                        <p>{{ $visitors->links() }}</p>
                                     </div>
                                 </div>
                             </div>

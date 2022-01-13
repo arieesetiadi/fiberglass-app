@@ -19,6 +19,9 @@
         <div class="row">
             <div class="col-6">
                 <div class="card">
+                    <div class="card-header bg-white">
+                        Kategori Produk
+                    </div>
                     <div class="card-body">
                         <form action="{{ route('kategori.update', $category->id) }}" method="POST">
                             @csrf
@@ -34,7 +37,7 @@
                             </div>
                         </form>
                         <hr>
-                        <table class="table">
+                        <table class="table table-sm">
                             <tr>
                                 <th>#</th>
                                 <th>Kategori</th>

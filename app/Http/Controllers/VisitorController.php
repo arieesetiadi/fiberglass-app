@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\DB;
 
 class VisitorController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
-
     public function home()
     {
         GeoController::storeVisitor();
@@ -44,7 +39,7 @@ class VisitorController extends Controller
             ->where('products.category_id', $idKategori)
             ->select('products.*', 'categories.name as category')
             ->orderByDesc('products.id')
-            ->paginate(25);
+            ->paginate(24);
 
         $data['category'] = DB::table('categories')
             ->where('id', $idKategori)
@@ -86,6 +81,7 @@ class VisitorController extends Controller
         $data['title'] = $kategori;
         $kategori = str_replace(' ', '-', strtolower($kategori));
         $data['categories'] = DB::table('categories')->get();
+        $data['galleries'] = DB::table('gallery')->orderByDesc('id')->paginate(24);
 
         return view('visitor.about.' . $kategori, $data);
     }

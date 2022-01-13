@@ -51,7 +51,7 @@
             @endforelse
         </div>
         <div class="d-flex justify-content-center">
-            <div class="my-3">{{ $products->links() }}</div>
+            <div class="my-3 mt-4">{{ $products->links() }}</div>
         </div>
     </div>
 @endsection

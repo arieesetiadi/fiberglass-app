@@ -112,17 +112,11 @@
                     <div class="flat-spacer" data-desktop="0" data-sdesktop="0" data-mobi="50" data-smobi="50"></div>
                     <div class="content">
                         <blockquote>
-                            Ut enim minim veniam quis nostrud exercitation ullamc and aliquip ex ea commodo consequat
-                            aute irure dolor innerem voluptate velit esse cillum.
                         </blockquote>
                         <div class="title d-lg-flex align-items-center">
                             Over<span> 25 </span>years experience
                         </div>
                         <p>
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess cillum dolore eu
-                            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                            officia deserunt.
                         </p>
                     </div>
                 </div>
@@ -131,7 +125,7 @@
     </section><!-- who-we-are -->
     <section class="fact-type2">
         <h1 class="text-center text-dark font-weight-bold">JUMLAH PENGUNJUNG</h1>
-        <div class="container mt-5 d-flex justify-content-lg-between justify-content-center flex-lg-nowrap flex-wrap">
+        <div class="container mt-5 d-flex justify-content-lg-between justify-content-center flex-lg-nowrap flex-wrap mb-5">
             {{-- <div class="counter counter-type2">
                 <div class="content-counter hv-background-before">
                     <div class="icon-count"><span class="icon-team"></span></div>

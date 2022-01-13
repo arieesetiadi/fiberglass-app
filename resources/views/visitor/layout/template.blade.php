@@ -47,6 +47,21 @@ $logo = DB::table('logos')
         }
 
     </style>
+
+    <!-- Chatra {literal} -->
+    <script>
+        (function(d, w, c) {
+            w.ChatraID = '6ZBcuLWc8GivFTrdw';
+            var s = d.createElement('script');
+            w[c] = w[c] || function() {
+                (w[c].q = w[c].q || []).push(arguments);
+            };
+            s.async = true;
+            s.src = 'https://call.chatra.io/chatra.js';
+            if (d.head) d.head.appendChild(s);
+        })(document, window, 'Chatra');
+    </script>
+    <!-- /Chatra {/literal} -->
 </head>
 
 <body class="counter-scroll">
@@ -181,7 +196,7 @@ $logo = DB::table('logos')
                 </div>
             </div>
         </div>
-        <a id="scroll-top" class="show"></a>
+        {{-- <a id="scroll-top" class="show"></a> --}}
     </footer><!-- footer -->
 
     <script src="{{ asset('assets-3/javascript/jquery.min.js') }}"></script>
@@ -262,6 +277,8 @@ $logo = DB::table('logos')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.4/js/bootstrap.js"
         integrity="sha512-Jp3bCw/xkeMs5f1y6U/ytOnQC+X0Xny7ZZlStxH4BAwUvG0TeCM1ZNnZGreBrnNYbWQQcSknDDtnYybCNSVOVA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    {{-- <script src="//code.tidio.co/rvenr93aokkcmgsmakhbchgqwfclhvn4.js" async></script> --}}
 </body>
 
 </html>
