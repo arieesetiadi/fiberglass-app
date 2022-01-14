@@ -40,9 +40,9 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="url" class="form-label">URL :</label>
-                                <input name="url" type="text" class="form-control" id="url" placeholder="URL Akun"
-                                    required>
+                                <label for="url" class="form-label">Address :</label>
+                                <input name="url" type="text" class="form-control" id="url"
+                                    placeholder="URL / email / phone" required>
                             </div>
                             <div class="mb-3">
                                 <button class="btn btn-primary">Simpan</button>
