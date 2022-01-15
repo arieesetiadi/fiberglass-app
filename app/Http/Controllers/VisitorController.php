@@ -22,6 +22,7 @@ class VisitorController extends Controller
             ->whereMonth('created_at', now()->month)
             ->count();
         $data['categories'] = DB::table('categories')->get();
+        $data['news'] = DB::table('news')->orderByDesc('id')->limit(3)->get();
 
         return view('visitor.home', $data);
     }
@@ -120,5 +121,14 @@ class VisitorController extends Controller
         foreach ($admins as $admin) {
             Mail::send(new ContactMail($request, $admin));
         }
+    }
+
+    public function newsDetail($id)
+    {
+        $data['title'] = 'Detail News';
+        $data['news'] = DB::table('news')->where('id', $id)->get()[0];
+        $data['categories'] = DB::table('categories')->get();
+
+        return view('visitor.news.show', $data);
     }
 }

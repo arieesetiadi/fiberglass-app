@@ -59,6 +59,14 @@
                 <div class="menu-title">Sosial Media</div>
             </a>
         </li>
+
+        <li>
+            <a href="{{ route('news.index') }}" class="" aria-expanded="true">
+                <div class="parent-icon"><i class="bi bi-newspaper"></i>
+                </div>
+                <div class="menu-title">Berita</div>
+            </a>
+        </li>
     </ul>
     <!--end navigation-->
 </aside>

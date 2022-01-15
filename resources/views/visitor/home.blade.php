@@ -125,6 +125,7 @@
     </section><!-- who-we-are -->
     <section class="fact-type2">
         <h1 class="text-center text-dark font-weight-bold">JUMLAH PENGUNJUNG</h1>
+        <hr>
         <div class="container mt-5 d-flex justify-content-lg-between justify-content-center flex-lg-nowrap flex-wrap mb-5">
             {{-- <div class="counter counter-type2">
                 <div class="content-counter hv-background-before">
@@ -169,6 +170,34 @@
             </div>
         </div>
     </section><!-- fact -->
+
+    <section class="container-fluid px-5 my-5">
+        <h1 class="text-center text-dark font-weight-bold">BERITA TERKINI</h1>
+        <hr>
+        <div class="pb-5">
+            <div class="row mt-5">
+                @foreach ($news as $new)
+                    <div class="col-4">
+                        <div class="w-100 p-3 shadow-sm">
+                            <div class="">
+                                <h5 class="h4 text-dark">{{ $new->title }}</h5>
+                                <small class="card-subtitle my-2 text-muted">
+                                    {{ now()->make($new->created_at)->format('l, d F Y') }} | Uncategorized</small>
+                                <hr>
+                                <div style="overflow: hidden; text-overflow: ellipsis; height: 135px">
+                                    {!! $new->body !!}
+                                </div>
+                                <hr>
+                                <a href="{{ route('news-detail', $new->id) }}" class="btn btn-sm btn-primary">Read
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
     <section class="cta-type2 parallax parallax3">
         <div class="section-overlay"></div>
         <div class="container position-relative text-center">

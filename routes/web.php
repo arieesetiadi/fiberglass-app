@@ -10,6 +10,7 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SocialController;
 use App\Mail\ContactMail;
 use Carbon\CarbonPeriod;
@@ -31,7 +32,7 @@ use Illuminate\Support\Facades\Mail;
 // });
 
 Route::get('/info', function () {
-    phpinfo();
+    // phpinfo();
     // $geo = geoip()->getLocation();
 
     // for ($i = 0; $i < 100; $i++) {
@@ -80,6 +81,9 @@ Route::resource('/gallery', GalleryController::class);
 // Route Social
 Route::resource('/social', SocialController::class);
 
+// Route News
+Route::resource('/news', NewsController::class);
+
 
 // Route Visitor ================
 Route::get('/', [VisitorController::class, 'home'])->name('home');
@@ -91,3 +95,4 @@ Route::get('/investor', [VisitorController::class, 'investor'])->name('investor'
 Route::get('/about/{kategori}', [VisitorController::class, 'about'])->name('about');
 Route::get('/download', [VisitorController::class, 'download'])->name('download');
 Route::post('/send-email', [VisitorController::class, 'sendEmail'])->name('send-email');
+Route::get('/news/detail/{id}', [VisitorController::class, 'newsDetail'])->name('news-detail');
