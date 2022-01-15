@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMail;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class VisitorController extends Controller
 {
@@ -108,5 +111,14 @@ class VisitorController extends Controller
     public function download()
     {
         dd('Download');
+    }
+
+    public function sendEmail(Request $request)
+    {
+        $admins = DB::table('users')->get();
+
+        foreach ($admins as $admin) {
+            Mail::send(new ContactMail($request, $admin));
+        }
     }
 }

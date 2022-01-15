@@ -12,10 +12,10 @@
             </div>
         </div>
     </div><!-- page-title -->
-    <div class="contact flat-row-half">
+    <div class="contact mt-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-8">
                     <div class="get-in-touch get-in-touch-type1">
                         <div class="text-contact">Jangan ragu untuk <a>menghubungi kami untuk informasi
                                 apapun.</a></div>
@@ -28,42 +28,58 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-5">
-                    <form id="contactform" action="./contact/contact-process.php" method="post"
+                <div class="col-lg-4 mb-5">
+                    <form action="{{ route('send-email') }}" method="POST" class="mt-3">
+                        @csrf
+                        <div class="form-group">
+                            <input name="name" type="text" class="form-control" placeholder="Nama">
+                        </div>
+                        <div class="form-group">
+                            <input name="email" type="email" class="form-control" placeholder="Alamat email">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" class="form-control" rows="3" placeholder=" Isi pesan"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-block btn-primary">Kirim Pesan</button>
+                        </div>
+                    </form>
+                    {{-- <form id="contactform" action="{{ route('send-email') }}" method="post"
                         class="form-leave-comment form-submit">
+                        @csrf
                         <div class="text-wrap d-md-flex clearfix">
                             <div class="w-left position-relative">
-                                <input type="text" name="firstname" id="firstname" value="" class="firstname"
-                                    placeholder="Nama">
+                                <input type="text" name="name" id="name" value="" class="name" placeholder="Nama"
+                                    required>
                                 <span class="icon-user"></span>
                             </div>
                             <div class="w-right position-relative">
                                 <input type="text" name="email" id="email" value="" class="email"
-                                    placeholder="Email">
+                                    placeholder="Email" required>
                                 <span class="fa fa-envelope" aria-hidden="true"></span>
                             </div>
                         </div>
                         <div class="message-wrap mg-b50" style="height: 150px">
                             <textarea name="message" id="comment-message" rows="6" placeholder="Isi pesan"
-                                required="required" style="height: 150px"></textarea>
+                                required="required" style="height: 150px" required></textarea>
                         </div>
                         <div class="flat-send-message btn-linear hv-linear-gradient text-center">
                             <button name="submit" type="submit"
                                 class="submit btn-block font-style linear-color border-corner" id="submit">Kirim
                                 Pesan</button>
                         </div>
-                    </form>
+                    </form> --}}
                 </div>
             </div>
         </div>
     </div>
     <hr>
     <div class="container">
-        <h1 class="text-center h3 text-dark my-5">Social Media</h1>
-        <div class="row">
+        {{-- <h1 class="text-center h3 text-dark my-5">Social Media</h1> --}}
+        <div class="row my-5">
             @foreach ($socials as $social)
                 @if ($social->type == 'phone' || $social->type == 'email')
-                    <div class="col-lg-3 mb-5">
+                    <div class="col-lg-3 py-3">
                         <center>
                             <a>
                                 <img width="50px" src="{{ asset('assets/images/icons/') . '/' . $social->type . '.png' }}"
@@ -73,7 +89,7 @@
                         </center>
                     </div>
                 @else
-                    <div class="col-lg-3 mb-5">
+                    <div class="col-lg-3 py-3">
                         <center>
                             <a target="_blank" href="{{ $social->url }}">
                                 <img width="50px" src="{{ asset('assets/images/icons/') . '/' . $social->type . '.png' }}"

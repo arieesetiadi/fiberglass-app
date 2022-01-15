@@ -11,7 +11,9 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\SocialController;
+use App\Mail\ContactMail;
 use Carbon\CarbonPeriod;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,10 @@ use Carbon\CarbonPeriod;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Route::get('/send-mail', function () {
+//     Mail::send(new ContactMail());
+// });
 
 Route::get('/info', function () {
     phpinfo();
@@ -84,3 +90,4 @@ Route::get('/job', [VisitorController::class, 'job'])->name('job');
 Route::get('/investor', [VisitorController::class, 'investor'])->name('investor');
 Route::get('/about/{kategori}', [VisitorController::class, 'about'])->name('about');
 Route::get('/download', [VisitorController::class, 'download'])->name('download');
+Route::post('/send-email', [VisitorController::class, 'sendEmail'])->name('send-email');
