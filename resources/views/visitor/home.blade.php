@@ -50,49 +50,58 @@
             </div>
         </div>
     </div><!-- flat-slider -->
+
     <section class="features flat-row">
         <div class="container d-lg-flex">
-            <div class="iconbox-features hv-background-before">
-                <div class="iconbox-icon"><span class="icon-shield"></span></div>
-                <div class="iconbox-content">
-                    <h3 class="title">Protect Business</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore.
-                    </p>
-                    <div class="discover-more">
-                        <a href="#">Discover More</a>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="iconbox-features">
+                        {{-- <div class="iconbox-icon"> --}}
+                        {{-- <span class="icon-shield"></span> --}}
+                        <img src="{{ asset('assets-3/images/premium-quality.jpeg') }}" alt="Premium"
+                            class="rounded-circle" style="height: 150px">
+                        {{-- </div> --}}
+                        <div class="my-4">
+                            <h3 class="title text-dark font-weight-bold">Premium Quality</h3>
+                            <p>
+                                Kami menyediakan berbagai produk yang hadir dengan kualitas yang maksimal dan juga premium.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="iconbox-features hv-background-before active">
-                <div class="iconbox-icon"><span class="icon-optimization"></span></div>
-                <div class="iconbox-content">
-                    <h3 class="title">Optimize IT systems</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore.
-                    </p>
-                    <div class="discover-more">
-                        <a href="#">Discover More</a>
+                <div class="col-lg-4">
+                    <div class="iconbox-features">
+                        {{-- <div class="iconbox-icon"><span class="icon-alarm"></span></div> --}}
+                        <img src="{{ asset('assets-3/images/guaranteed.jpeg') }}" alt="Guaranteed" class="rounded-circle"
+                            style="height: 150px">
+
+                        <div class="my-4">
+                            <h3 class="title text-dark font-weight-bold">Satisfaction Guaranteed</h3>
+                            <p>
+                                Kepuasan pelanggan terjamin dengan pelayanan yang maksimal serta kualitas produk yang baik.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="iconbox-features hv-background-before">
-                <div class="iconbox-icon"><span class="icon-alarm"></span></div>
-                <div class="iconbox-content">
-                    <h3 class="title">Digital Enablement</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore.
-                    </p>
-                    <div class="discover-more">
-                        <a href="#">Discover More</a>
+                <div class="col-lg-4">
+                    <div class="iconbox-features">
+                        {{-- <div class="iconbox-icon"><span class="icon-alarm"></span></div> --}}
+                        <img src="{{ asset('assets-3/images/service.jpeg') }}" alt="Guaranteed" class="rounded-circle"
+                            style="height: 150px">
+
+                        <div class="my-4">
+                            <h3 class="title text-dark font-weight-bold">Reliability Service</h3>
+                            <p>
+                                Kami menyediakan pelayanan yang terbaik dan maksimal demi memenuhi keinginan dan
+                                kebutuhan konsumen.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section><!-- features -->
+
     <section class="who-we-are who-we-are-style1">
         <div class="container">
             <div class="row d-flex align-items-center">
@@ -125,7 +134,6 @@
     </section><!-- who-we-are -->
     <section class="fact-type2">
         <h1 class="text-center text-dark font-weight-bold">JUMLAH PENGUNJUNG</h1>
-        <hr>
         <div class="container mt-5 d-flex justify-content-lg-between justify-content-center flex-lg-nowrap flex-wrap mb-5">
             {{-- <div class="counter counter-type2">
                 <div class="content-counter hv-background-before">
@@ -173,16 +181,23 @@
 
     <section class="container-fluid px-5 my-5">
         <h1 class="text-center text-dark font-weight-bold">BERITA TERKINI</h1>
-        <hr>
         <div class="pb-5">
             <div class="row mt-5">
                 @foreach ($news as $new)
                     <div class="col-4">
-                        <div class="w-100 p-3 shadow-sm">
+                        <div class="w-100 p-5 shadow-sm">
                             <div class="">
                                 <h5 class="h4 text-dark">{{ $new->title }}</h5>
-                                <small class="card-subtitle my-2 text-muted">
-                                    {{ now()->make($new->created_at)->format('l, d F Y') }} | Uncategorized</small>
+                                <div>
+                                    <img src="{{ asset('assets/images/icons/date.png') }}" alt="Date"
+                                        class="d-inline-block" width="20px">
+                                    <span class="card-subtitle my-2 text-muted">
+                                        {{ now()->make($new->created_at)->format('l, d F Y') }}</span>
+                                    |
+                                    {{-- <img src="{{ asset('assets/images/icons/tag.png') }}" alt="Date"
+                                        class="d-inline-block" width="10px"> --}}
+                                    <span>Uncategorized</span>
+                                </div>
                                 <hr>
                                 <div style="overflow: hidden; text-overflow: ellipsis; height: 135px">
                                     {!! $new->body !!}
