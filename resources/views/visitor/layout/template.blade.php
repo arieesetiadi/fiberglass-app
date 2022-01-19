@@ -16,6 +16,10 @@ $logo = DB::table('logos')
 
     <!-- Bootstrap-->
     <link rel="stylesheet" href="{{ asset('assets-3/stylesheet/bootstrap.css') }}">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.4/css/bootstrap.css"
+        integrity="sha512-KsdCRnLXUKDOyOPhhh7EjWSh2Mh/ZI64XwaYQPGyvuQYWBE1FGTCPnUKjLvD+DDQevQdks3US94aYJsIQxTiKg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Template Style-->
     <link rel="stylesheet" href="{{ asset('assets-3/stylesheet/font-awesome.css') }}">
@@ -35,6 +39,10 @@ $logo = DB::table('logos')
         integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <style>
         .mySlides {
             display: none
@@ -115,7 +123,7 @@ $logo = DB::table('logos')
                                     <a href="/">Home</a>
                                 </li>
                                 <li>
-                                    <a href="#">Products</a>
+                                    <a href="{{ route('produk.kategori', 0) }}">Products</a>
                                     <ul class="sub-menu row" style="width: 500px">
                                         @foreach ($categories as $category)
                                             <li class="col-6">
@@ -212,7 +220,9 @@ $logo = DB::table('logos')
         </div>
         {{-- <a id="scroll-top" class="show"></a> --}}
     </footer><!-- footer -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.4/js/bootstrap.js"
+        integrity="sha512-Jp3bCw/xkeMs5f1y6U/ytOnQC+X0Xny7ZZlStxH4BAwUvG0TeCM1ZNnZGreBrnNYbWQQcSknDDtnYybCNSVOVA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset('assets-3/javascript/jquery.min.js') }}"></script>
     <script src="{{ asset('assets-3/javascript/parallax.js') }}"></script>
     <script src="{{ asset('assets-3/javascript/plugins.js') }}"></script>

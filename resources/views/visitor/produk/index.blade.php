@@ -7,8 +7,12 @@
                 <h6>
                     <span class="font-weight-bold">Produk</span>
                     >
-                    <a href="{{ route('produk.kategori', $category->id) }}"
-                        class="text-primary">{{ $category->name }}</a>
+                    @if (!isset($category))
+                        <a href="#" class="text-primary">Semua</a>
+                    @else
+                        <a href="{{ route('produk.kategori', $category->id) }}"
+                            class="text-primary">{{ $category->name }}</a>
+                    @endif
                 </h6>
             </div>
         </div>
@@ -21,9 +25,9 @@
         </div>
         <div class="row">
             @forelse ($products->unique('id') as $product)
-                <div class="col-lg-3 p-1">
+                <div class="col-lg-3 p-4">
                     <div class="card" style="width: 18rem;">
-                        <div class="p-5">
+                        <div class="p-5" style="min-height: 300px">
                             @php
                                 $cover = DB::table('product_images')
                                     ->where('product_id', $product->id)

@@ -29,27 +29,27 @@ class VisitorController extends Controller
 
     public function kategori($idKategori)
     {
-        // $data['products'] = DB::table('products')
-        //     ->join('categories', 'categories.id', '=', 'products.category_id')
-        //     ->join('product_images', 'product_images.product_id', '=', 'products.id')
-        //     ->where('products.category_id', $idKategori)
-        //     ->where('product_images.is_hide', false)
-        //     ->distinct()
-        //     ->select('products.*', 'categories.name as category', 'product_images.image as image')
-        //     ->paginate(25);
+        if ($idKategori == 0) {
+            $data['products'] = DB::table('products')
+                ->join('categories', 'categories.id', '=', 'products.category_id')
+                ->select('products.*', 'categories.name as category')
+                ->orderByDesc('products.id')
+                ->paginate(24);
+            $data['title'] = 'Semua Produk';
+        } else {
+            $data['products'] = DB::table('products')
+                ->join('categories', 'categories.id', '=', 'products.category_id')
+                ->where('products.category_id', $idKategori)
+                ->select('products.*', 'categories.name as category')
+                ->orderByDesc('products.id')
+                ->paginate(24);
+            $data['category'] = DB::table('categories')
+                ->where('id', $idKategori)
+                ->get()[0];
+            $data['title'] = DB::table('categories')->where('id', $idKategori)->get('name')[0]->name;
+        }
 
-        $data['products'] = DB::table('products')
-            ->join('categories', 'categories.id', '=', 'products.category_id')
-            ->where('products.category_id', $idKategori)
-            ->select('products.*', 'categories.name as category')
-            ->orderByDesc('products.id')
-            ->paginate(24);
-
-        $data['category'] = DB::table('categories')
-            ->where('id', $idKategori)
-            ->get()[0];
         $data['categories'] = DB::table('categories')->get();
-        $data['title'] = DB::table('categories')->where('id', $idKategori)->get('name')[0]->name;
 
         return view('visitor.produk.index', $data);
     }
@@ -87,36 +87,7 @@ class VisitorController extends Controller
         $kategori = str_replace(' ', '-', strtolower($kategori));
         $data['categories'] = DB::table('categories')->get();
         $data['galleries'] = DB::table('gallery')->orderByDesc('id')->paginate(24);
-        $data['faqs'] = [
-            [
-                'Apa itu Fiberglass ?',
-                'Fiberglass merupakan Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat exenim consectetur molestias sit tenetur soluta ullam magni beatae qui dolorem, nesciunt, perspiciatis nisi dolore?'
-            ],
-            [
-                'Apa saja keunggulan dari Fiberglass ?',
-                'Fiberglass merupakan Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat exenim consectetur molestias sit tenetur soluta ullam magni beatae qui dolorem, nesciunt, perspiciatis nisi dolore?'
-            ],
-            [
-                'Apa itu Tangki Panel ?',
-                'Fiberglass merupakan Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat exenim consectetur molestias sit tenetur soluta ullam magni beatae qui dolorem, nesciunt, perspiciatis nisi dolore?'
-            ],
-            [
-                'Bagaimana cara menghitung ukuran Tangki Air ?',
-                'Fiberglass merupakan Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat exenim consectetur molestias sit tenetur soluta ullam magni beatae qui dolorem, nesciunt, perspiciatis nisi dolore?'
-            ],
-            [
-                'Apa itu Septic Tank ?',
-                'Fiberglass merupakan Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat exenim consectetur molestias sit tenetur soluta ullam magni beatae qui dolorem, nesciunt, perspiciatis nisi dolore?'
-            ],
-            [
-                'Bagaimana cara menghitung ukuran Septic Tank  ?',
-                'Fiberglass merupakan Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat exenim consectetur molestias sit tenetur soluta ullam magni beatae qui dolorem, nesciunt, perspiciatis nisi dolore?'
-            ],
-            [
-                'Apa itu Solid Surface ?',
-                'Fiberglass merupakan Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat exenim consectetur molestias sit tenetur soluta ullam magni beatae qui dolorem, nesciunt, perspiciatis nisi dolore?'
-            ],
-        ];
+        $data['faqs'] = DB::table('faqs')->get();
 
         return view('visitor.about.' . $kategori, $data);
     }

@@ -14,33 +14,44 @@
             </div>
         </div>
     </div>
+
     <div class="container py-5">
-        @foreach ($faqs as $faq)
-            <div class="row d-flex justify-content-center">
-                <div class="col-lg-10">
+        <div class="row">
+            @foreach ($faqs as $i => $faq)
+                <div class="col-lg-6">
                     <table border="0" class="table table-borderless">
                         <tr>
-                            <td>
-                                <img width="40px" src="{{ asset('assets/images/icons/question.png') }}" alt="">
+                            <td style="width: 100px">
+                                <img width="25px" src="{{ asset('assets/images/icons/question.png') }}" alt="">
                             </td>
-                            <th> : </th>
+                            <th style="width: 10px"> : </th>
                             <th>
-                                <p class="text-dark font-weight-bold">{{ $faq[0] }}</p>
+                                <a type="button" class="faq-modal-button" data-toggle="modal"
+                                    data-target="#faqModal{{ $i }}" style="width: 450px">
+                                    {{ $faq->question }}
+                                </a>
                             </th>
                         </tr>
-                        <tr>
-                            <td>
-                                <img width="40px" src="{{ asset('assets/images/icons/ceo.png') }}" alt="">
-                            </td>
-                            <td> : </td>
-                            <td>
-                                <p>{{ $faq[1] }}</p>
-                            </td>
-                        </tr>
+                        <!-- Modal -->
+                        <div class="modal fade" id="faqModal{{ $i }}" tabindex="-1" role="dialog"
+                            aria-labelledby="faqModalTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header p-4">
+                                        <h5 class="modal-title text-dark font-weight-bold" id="faq-modal-title">
+                                            {{ $faq->question }}</h5>
+                                    </div>
+                                    <div id="faq-modal-body-{{ $i }}" class="p-4">
+                                        {!! $faq->answer !!}
+                                    </div>
+                                    <div class="modal-footer">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </table>
                 </div>
-            </div>
-            <hr>
-        @endforeach
+            @endforeach
+        </div>
     </div>
 @endsection

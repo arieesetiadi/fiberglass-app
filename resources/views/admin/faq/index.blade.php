@@ -46,7 +46,7 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>Pertanyaan</th>
-                                                <th>Jawaban</th>
+                                                {{-- <th>Jawaban</th> --}}
                                                 <th>
                                                     <span class="mx-4 d-inline-block">Aksi</span>
                                                 </th>
@@ -60,7 +60,7 @@
                                                         <td>#9405822</td> --}}
                                                     <td>{{ $faqs->firstItem() + $loop->index }}</td>
                                                     <td>{{ $faq->question }}</td>
-                                                    <td>{!! $faq->answer !!}</td>
+                                                    {{-- <td>{!! $faq->answer !!}</td> --}}
                                                     <td>
                                                         <form action="{{ route('faq.edit', $faq->id) }}"
                                                             class="d-inline-block" method="GET">
