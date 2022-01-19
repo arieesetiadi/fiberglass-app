@@ -72,20 +72,6 @@
                 <div class="col-lg-4">
                     <div class="iconbox-features">
                         {{-- <div class="iconbox-icon"><span class="icon-alarm"></span></div> --}}
-                        <img src="{{ asset('assets-3/images/guaranteed.jpeg') }}" alt="Guaranteed" class="rounded-circle"
-                            style="height: 150px">
-
-                        <div class="my-4">
-                            <h3 class="title text-dark font-weight-bold">Satisfaction Guaranteed</h3>
-                            <p>
-                                Kepuasan pelanggan terjamin dengan pelayanan yang maksimal serta kualitas produk yang baik.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="iconbox-features">
-                        {{-- <div class="iconbox-icon"><span class="icon-alarm"></span></div> --}}
                         <img src="{{ asset('assets-3/images/service.jpeg') }}" alt="Guaranteed" class="rounded-circle"
                             style="height: 150px">
 
@@ -94,6 +80,20 @@
                             <p>
                                 Kami menyediakan pelayanan yang terbaik dan maksimal demi memenuhi keinginan dan
                                 kebutuhan konsumen.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="iconbox-features">
+                        {{-- <div class="iconbox-icon"><span class="icon-alarm"></span></div> --}}
+                        <img src="{{ asset('assets-3/images/guaranteed.jpeg') }}" alt="Guaranteed" class="rounded-circle"
+                            style="height: 150px">
+
+                        <div class="my-4">
+                            <h3 class="title text-dark font-weight-bold">Satisfaction Guaranteed</h3>
+                            <p>
+                                Kepuasan pelanggan terjamin dengan pelayanan yang maksimal serta kualitas produk yang baik.
                             </p>
                         </div>
                     </div>

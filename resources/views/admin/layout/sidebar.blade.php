@@ -67,6 +67,14 @@
                 <div class="menu-title">Berita</div>
             </a>
         </li>
+
+        <li>
+            <a href="{{ route('faq.index') }}" class="" aria-expanded="true">
+                <div class="parent-icon"><i class="bi bi-question-square"></i>
+                </div>
+                <div class="menu-title">FAQ</div>
+            </a>
+        </li>
     </ul>
     <!--end navigation-->
 </aside>

@@ -137,15 +137,15 @@ $logo = DB::table('logos')
                                         <li class="col-6">
                                             <a href="{{ route('about', 'FAQ') }}">FAQ</a>
                                         </li>
-                                        <li class="col-6">
+                                        {{-- <li class="col-6">
                                             <a href="{{ route('about', 'Fiberglass') }}">Fiberglass</a>
-                                        </li>
-                                        <li class="col-6">
+                                        </li> --}}
+                                        {{-- <li class="col-6">
                                             <a href="{{ route('about', 'Yacht') }}">Yacht</a>
-                                        </li>
-                                        <li class="col-6">
+                                        </li> --}}
+                                        {{-- <li class="col-6">
                                             <a href="{{ route('about', 'Kancing') }}">Kancing</a>
-                                        </li>
+                                        </li> --}}
                                         <li class="col-6">
                                             <a href="{{ route('about', 'Gallery') }}">Gallery</a>
                                         </li>

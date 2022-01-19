@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GeoController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FAQController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\VisitorController;
@@ -83,6 +84,9 @@ Route::resource('/social', SocialController::class);
 
 // Route News
 Route::resource('/news', NewsController::class);
+
+// Route FAQ
+Route::resource('/faq', FAQController::class);
 
 
 // Route Visitor ================

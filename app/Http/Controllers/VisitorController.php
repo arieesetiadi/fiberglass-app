@@ -87,6 +87,36 @@ class VisitorController extends Controller
         $kategori = str_replace(' ', '-', strtolower($kategori));
         $data['categories'] = DB::table('categories')->get();
         $data['galleries'] = DB::table('gallery')->orderByDesc('id')->paginate(24);
+        $data['faqs'] = [
+            [
+                'Apa itu Fiberglass ?',
+                'Fiberglass merupakan Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat exenim consectetur molestias sit tenetur soluta ullam magni beatae qui dolorem, nesciunt, perspiciatis nisi dolore?'
+            ],
+            [
+                'Apa saja keunggulan dari Fiberglass ?',
+                'Fiberglass merupakan Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat exenim consectetur molestias sit tenetur soluta ullam magni beatae qui dolorem, nesciunt, perspiciatis nisi dolore?'
+            ],
+            [
+                'Apa itu Tangki Panel ?',
+                'Fiberglass merupakan Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat exenim consectetur molestias sit tenetur soluta ullam magni beatae qui dolorem, nesciunt, perspiciatis nisi dolore?'
+            ],
+            [
+                'Bagaimana cara menghitung ukuran Tangki Air ?',
+                'Fiberglass merupakan Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat exenim consectetur molestias sit tenetur soluta ullam magni beatae qui dolorem, nesciunt, perspiciatis nisi dolore?'
+            ],
+            [
+                'Apa itu Septic Tank ?',
+                'Fiberglass merupakan Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat exenim consectetur molestias sit tenetur soluta ullam magni beatae qui dolorem, nesciunt, perspiciatis nisi dolore?'
+            ],
+            [
+                'Bagaimana cara menghitung ukuran Septic Tank  ?',
+                'Fiberglass merupakan Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat exenim consectetur molestias sit tenetur soluta ullam magni beatae qui dolorem, nesciunt, perspiciatis nisi dolore?'
+            ],
+            [
+                'Apa itu Solid Surface ?',
+                'Fiberglass merupakan Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat exenim consectetur molestias sit tenetur soluta ullam magni beatae qui dolorem, nesciunt, perspiciatis nisi dolore?'
+            ],
+        ];
 
         return view('visitor.about.' . $kategori, $data);
     }
