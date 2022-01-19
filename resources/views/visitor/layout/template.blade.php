@@ -120,10 +120,10 @@ $logo = DB::table('logos')
                         <nav id="mainnav" class="mainnav">
                             <ul class="menu">
                                 <li>
-                                    <a href="/">Home</a>
+                                    <a href="/" style="font-weight: 100">Home</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('produk.kategori', 0) }}">Products</a>
+                                    <a href="{{ route('produk.kategori', 0) }}" style="font-weight: 100">Products</a>
                                     <ul class="sub-menu row" style="width: 500px">
                                         @foreach ($categories as $category)
                                             <li class="col-6">
@@ -134,13 +134,14 @@ $logo = DB::table('logos')
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="{{ route('investor') }}">Investor Relationship</a>
+                                    <a href="{{ route('investor') }}" style="font-weight: 100">Investor
+                                        Relationship</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('job') }}">Job Vacancy</a>
+                                    <a href="{{ route('job') }}" style="font-weight: 100">Job Vacancy</a>
                                 </li>
                                 <li>
-                                    <a href="#">About Us</a>
+                                    <a href="#" style="font-weight: 100">About Us</a>
                                     <ul class="sub-menu row" style="width: 350px">
                                         <li class="col-6">
                                             <a href="{{ route('about', 'FAQ') }}">FAQ</a>
@@ -166,7 +167,7 @@ $logo = DB::table('logos')
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="{{ route('kontak') }}">Contact</a>
+                                    <a href="{{ route('kontak') }}" style="font-weight: 100">Contact</a>
                                 </li>
                                 <li>
                                     <a target="_blank" href="{{ route('download') }}" title="Download Our Brochure">
@@ -238,6 +239,7 @@ $logo = DB::table('logos')
     <script src="{{ asset('assets-3/javascript/wow.min.js') }}"></script>
     <script src="{{ asset('assets-3/javascript/jquery-validate.js') }}"></script>
     <script src="{{ asset('assets-3/javascript/main.js') }}"></script>
+    <script src="{{ asset('assets-3/javascript/card-slider.js') }}"></script>
 
     <!-- slider -->
     <script src="{{ asset('assets-3/rev-slider/js/jquery.themepunch.tools.min.js') }}"></script>

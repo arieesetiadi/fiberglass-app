@@ -112,7 +112,10 @@ class VisitorController extends Controller
 
     public function download()
     {
-        dd('Download');
+        $data['title'] = 'Download';
+        $data['categories'] = DB::table('categories')->get();
+
+        return view('visitor.download', $data);
     }
 
     public function sendEmail(Request $request)

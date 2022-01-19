@@ -103,77 +103,87 @@
     </section><!-- features -->
 
     <section class="who-we-are who-we-are-style1">
-        <div class="container">
+        <h1 class="text-center text-dark font-weight-bold">MENGAPA MEMILIH KAMI ?</h1>
+        <div class="container mt-5">
             <div class="row d-flex align-items-center">
-                <div class="col-lg-5 col-12">
-                    <div class="featured-post position-relative">
-                        <div class="entry-image">
-                            <img src="{{ asset('assets-3/images/home1/default.png') }}" alt="images"
-                                class="rounded">
-                        </div>
-                        <div class="iconbox-award">
-                            <span class="icon-trophy"></span>
-                            <div class="spinning-circle"></div>
-                        </div>
-                    </div>
+                <div class="col-lg-4 my-5">
+                    <center>
+                        <img width="100px" src="{{ asset('assets/images/icons/quality.png') }}" alt="">
+                        <h4 class="mt-3">Berkualitas</h4>
+                    </center>
                 </div>
-                <div class="col-lg-7 col-12">
-                    <div class="flat-spacer" data-desktop="0" data-sdesktop="0" data-mobi="50" data-smobi="50"></div>
-                    <div class="content">
-                        <blockquote>
-                        </blockquote>
-                        <div class="title d-lg-flex align-items-center">
-                            Over<span> 25 </span>years experience
-                        </div>
-                        <p>
-                        </p>
-                    </div>
+                <div class="col-lg-4 my-5">
+                    <center>
+                        <img width="100px" src="{{ asset('assets/images/icons/structure.png') }}" alt="">
+                    </center>
+                </div>
+                <div class="col-lg-4 my-5">
+                    <center>
+                        <img width="100px" src="{{ asset('assets/images/icons/customer.png') }}" alt="">
+                        <h4 class="mt-3">Mengutamakan Konsumen</h4>
+                    </center>
+                </div>
+                <div class="col-lg-4 my-5">
+                    <center>
+                        <img width="100px" src="{{ asset('assets/images/icons/work.png') }}" alt="">
+                        <h4 class="mt-3">Profesional</h4>
+                    </center>
+                </div>
+                <div class="col-lg-4 my-5">
+                    <center>
+                        <img width="100px" src="{{ asset('assets/images/icons/experience.png') }}" alt="">
+                        <h4 class="mt-3">Berpengalaman</h4>
+                    </center>
+                </div>
+                <div class="col-lg-4 my-5">
+                    <center>
+                        <img width="100px" src="{{ asset('assets/images/icons/service.png') }}" alt="">
+                        <h4>After Sales Service</h4>
+                    </center>
                 </div>
             </div>
         </div>
     </section><!-- who-we-are -->
+
     <section class="fact-type2">
         <h1 class="text-center text-dark font-weight-bold">JUMLAH PENGUNJUNG</h1>
-        <div class="container mt-5 d-flex justify-content-lg-between justify-content-center flex-lg-nowrap flex-wrap mb-5">
-            {{-- <div class="counter counter-type2">
-                <div class="content-counter hv-background-before">
-                    <div class="icon-count"><span class="icon-team"></span></div>
-                    <div class="numb-count-wrap">
-                        <span class="numb-count" data-from="0" data-to="856" data-speed="2000"
-                            data-inviewport="yes">856</span>
-                        <span class="numb-plus">+</span>
-                    </div>
-                    <div class="name-count">Happy Clients</div>
+        <div class="container">
+            <div class="row my-5">
+                <div class="counter counter-type2 col-lg-4 col-sm-12">
+                    <center>
+                        <div class="content-counter hv-background-before">
+                            <div class="icon-count"><span class="icon-portfolio"></span></div>
+                            <div class="numb-count-wrap">
+                                <span class="numb-count" data-from="0" data-to="{{ $totalVisitors }}"
+                                    data-speed="2000" data-inviewport="yes">{{ $totalVisitors }}</span>
+                            </div>
+                            <div class="name-count">Total</div>
+                        </div>
+                    </center>
                 </div>
-            </div> --}}
-            <div class="counter counter-type2">
-                <div class="content-counter hv-background-before">
-                    <div class="icon-count"><span class="icon-portfolio"></span></div>
-                    <div class="numb-count-wrap">
-                        <span class="numb-count" data-from="0" data-to="{{ $totalVisitors }}" data-speed="2000"
-                            data-inviewport="yes">{{ $totalVisitors }}</span>
-                    </div>
-                    <div class="name-count">Total</div>
+                <div class="counter counter-type2 col-lg-4 col-sm-12">
+                    <center>
+                        <div class="content-counter hv-background-before">
+                            <div class="icon-count"><span class="icon-observation"></span></div>
+                            <div class="numb-count-wrap">
+                                <span class="numb-count" data-from="0" data-to="{{ $todayVisitors }}"
+                                    data-speed="2000" data-inviewport="yes">{{ $todayVisitors }}</span>
+                            </div>
+                            <div class="name-count">Hari Ini</div>
+                        </div>
+                    </center>
                 </div>
-            </div>
-            <div class="counter counter-type2">
-                <div class="content-counter hv-background-before">
-                    <div class="icon-count"><span class="icon-observation"></span></div>
-                    <div class="numb-count-wrap">
-                        <span class="numb-count" data-from="0" data-to="{{ $todayVisitors }}" data-speed="2000"
-                            data-inviewport="yes">{{ $todayVisitors }}</span>
-                    </div>
-                    <div class="name-count">Hari Ini</div>
-                </div>
-            </div>
-            <div class="counter counter-type2">
-                <div class="content-counter hv-background-before">
-                    <div class="icon-count"><span class="icon-spam"></span></div>
-                    <div class="numb-count-wrap">
-                        <span class="numb-count" data-from="0" data-to="{{ $monthVisitors }}" data-speed="2000"
-                            data-inviewport="yes">{{ $monthVisitors }}</span>
-                    </div>
-                    <div class="name-count">Bulan Ini</div>
+                <div class="counter counter-type2 col-lg-4 col-sm-12">
+                    <center>
+                        <div class="content-counter hv-background-before">
+                            <div class="icon-count"><span class="icon-spam"></span></div>
+                            <div class="numb-count-wrap">
+                                <span class="numb-count" data-from="0" data-to="{{ $monthVisitors }}"
+                                    data-speed="2000" data-inviewport="yes">{{ $monthVisitors }}</span>
+                            </div>
+                            <div class="name-count">Bulan Ini</div>
+                        </div>
+                    </center>
                 </div>
             </div>
         </div>
@@ -187,7 +197,7 @@
                     <div class="col-4">
                         <div class="w-100 p-5 shadow-sm">
                             <div class="">
-                                <h5 class="h4 text-dark">{{ $new->title }}</h5>
+                                <h5 class="h5 text-dark">{{ $new->title }}</h5>
                                 <div>
                                     <img src="{{ asset('assets/images/icons/date.png') }}" alt="Date"
                                         class="d-inline-block" width="20px">
