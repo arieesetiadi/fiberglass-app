@@ -1,0 +1,7 @@
+.home-card {
+    transition: ease-in-out 0.2s;
+}
+
+.home-card:hover {
+    transform: scale(1.1);
+}

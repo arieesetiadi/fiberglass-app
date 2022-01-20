@@ -8,7 +8,7 @@
                     <!-- Slide 1 -->
                     <li data-transition="random">
                         <!-- Main Image -->
-                        <img src="{{ asset('assets-2/images/gallery/01.png') }}" alt="" data-bgposition="center center"
+                        <img src="{{ asset('assets-3/images/banner.jpg') }}" alt="" data-bgposition="center center"
                             data-no-retina>
                         <div class="overlay"></div>
 
@@ -21,7 +21,7 @@
                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
                             data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="1000"
-                            data-splitin="none" data-splitout="none" data-responsive_offset="on">IT services built</div>
+                            data-splitin="none" data-splitout="none" data-responsive_offset="on">Sinar Sakti</div>
 
                         <div class="tp-caption tp-resizeme text-white text-two"
                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -31,8 +31,8 @@
                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
                             data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="1600"
-                            data-splitin="none" data-splitout="none" data-responsive_offset="on">Specifically for<br>
-                            your business.</div>
+                            data-splitin="none" data-splitout="none" data-responsive_offset="on">Phoenix<br>
+                            Fiberglass.</div>
 
                         <div class="tp-caption tp-resizeme text-white btn-three"
                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -51,49 +51,76 @@
         </div>
     </div><!-- flat-slider -->
 
-    <section class="features flat-row">
+    <section class="features mt-5 py-5">
+        <div class="container d-lg-flex">
+            <div class="iconbox-features hv-background-before shadow-none rounded">
+                <div class="iconbox-icon"><span class="icon-shield"></span></div>
+                <div class="iconbox-content px-5">
+                    <h3 class="title">Visi</h3>
+                    <p class="text-justify">
+                        Menjadi salah satu pabrik fiberglass terbesar di Indonesia untuk memberikan kontribusi maksimal bagi
+                        tumbuh dan berkembangnya berbagai sektor industri di Indonesia pada khususnya dan berkontribusi
+                        terhadap pertumbuhan ekonomi nasional dan penurunan angka pengangguran di Indonesia.
+                    </p>
+                </div>
+            </div>
+            <div class="iconbox-features hv-background-before shadow-none rounded">
+                <div class="iconbox-icon"><span class="icon-alarm"></span></div>
+                <div class="iconbox-content px-5">
+                    <h3 class="title">Misi</h3>
+                    <p class="text-justify">
+                        Menyediakan produk berkualitas tinggi serta layanan terbaik dan harga yang lebih rendah untuk
+                        meningkatkan pengalaman pelanggan dalam bahan alternatif selain bahan umum seperti logam, plastik
+                        atau marmer dan untuk meningkatkan kualitas tenaga kerja untuk memastikan kami memberikan produk
+                        tahan lama lebih tinggi dari harapan pelanggan.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section><!-- features -->
+
+    <section class="features mb-5 pb-5">
         <div class="container d-lg-flex">
             <div class="row">
                 <div class="col-lg-4">
-                    <div class="iconbox-features">
+                    <div class="iconbox-features shadow-none ">
                         {{-- <div class="iconbox-icon"> --}}
                         {{-- <span class="icon-shield"></span> --}}
                         <img src="{{ asset('assets-3/images/premium-quality.jpeg') }}" alt="Premium"
-                            class="rounded-circle" style="height: 150px">
+                            class="rounded-circle home-card" style="height: 150px">
                         {{-- </div> --}}
                         <div class="my-4">
-                            <h3 class="title text-dark font-weight-bold">Premium Quality</h3>
+                            <h3 class="title text-dark font-weight-bold mb-4">Premium Quality</h3>
                             <p>
-                                Kami menyediakan berbagai produk yang hadir dengan kualitas yang maksimal dan juga premium.
+                                Kami menyediakan berbagai produk yang hadir dengan kualitas premium.
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="iconbox-features">
+                    <div class="iconbox-features shadow-none ">
                         {{-- <div class="iconbox-icon"><span class="icon-alarm"></span></div> --}}
-                        <img src="{{ asset('assets-3/images/service.jpeg') }}" alt="Guaranteed" class="rounded-circle"
-                            style="height: 150px">
+                        <img src="{{ asset('assets-3/images/service.jpeg') }}" alt="Guaranteed"
+                            class="rounded-circle home-card" style="height: 150px">
 
                         <div class="my-4">
-                            <h3 class="title text-dark font-weight-bold">Reliability Service</h3>
+                            <h3 class="title text-dark font-weight-bold mb-4">Reliability Service</h3>
                             <p>
-                                Kami menyediakan pelayanan yang terbaik dan maksimal demi memenuhi keinginan dan
-                                kebutuhan konsumen.
+                                Kami menyediakan pelayanan yang terbaik dan maksimal demi kebutuhan konsumen.
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="iconbox-features">
+                    <div class="iconbox-features shadow-none ">
                         {{-- <div class="iconbox-icon"><span class="icon-alarm"></span></div> --}}
-                        <img src="{{ asset('assets-3/images/guaranteed.jpeg') }}" alt="Guaranteed" class="rounded-circle"
-                            style="height: 150px">
+                        <img src="{{ asset('assets-3/images/guaranteed.jpeg') }}" alt="Guaranteed"
+                            class="rounded-circle home-card" style="height: 150px">
 
                         <div class="my-4">
-                            <h3 class="title text-dark font-weight-bold">Satisfaction Guaranteed</h3>
+                            <h3 class="title text-dark font-weight-bold mb-4">Satisfaction Guaranteed</h3>
                             <p>
-                                Kepuasan pelanggan terjamin dengan pelayanan yang maksimal serta kualitas produk yang baik.
+                                Kepuasan terjamin dengan layanan maintenance dan perbaikan yang maksimal.
                             </p>
                         </div>
                     </div>
@@ -103,12 +130,13 @@
     </section><!-- features -->
 
     <section class="who-we-are who-we-are-style1">
-        <h1 class="text-center text-dark font-weight-bold">MENGAPA MEMILIH KAMI ?</h1>
-        <div class="container mt-5">
+        <h2 class="text-center text-dark font-weight-bold">MENGAPA MEMILIH KAMI ?</h2>
+        <div class="container pt-5">
             <div class="row d-flex align-items-center">
                 <div class="col-lg-4 my-5">
                     <center>
-                        <img width="100px" src="{{ asset('assets/images/icons/quality.png') }}" alt="">
+                        <img class="home-card" width="100px" src="{{ asset('assets/images/icons/quality.png') }}"
+                            alt="">
                         <h4 class="mt-3">Berkualitas</h4>
                     </center>
                 </div>
@@ -119,25 +147,29 @@
                 </div>
                 <div class="col-lg-4 my-5">
                     <center>
-                        <img width="100px" src="{{ asset('assets/images/icons/customer.png') }}" alt="">
+                        <img class="home-card" width="100px" src="{{ asset('assets/images/icons/customer.png') }}"
+                            alt="">
                         <h4 class="mt-3">Mengutamakan Konsumen</h4>
                     </center>
                 </div>
                 <div class="col-lg-4 my-5">
                     <center>
-                        <img width="100px" src="{{ asset('assets/images/icons/work.png') }}" alt="">
+                        <img class="home-card" width="100px" src="{{ asset('assets/images/icons/work.png') }}"
+                            alt="">
                         <h4 class="mt-3">Profesional</h4>
                     </center>
                 </div>
                 <div class="col-lg-4 my-5">
                     <center>
-                        <img width="100px" src="{{ asset('assets/images/icons/experience.png') }}" alt="">
+                        <img class="home-card" width="100px" src="{{ asset('assets/images/icons/experience.png') }}"
+                            alt="">
                         <h4 class="mt-3">Berpengalaman</h4>
                     </center>
                 </div>
                 <div class="col-lg-4 my-5">
                     <center>
-                        <img width="100px" src="{{ asset('assets/images/icons/service.png') }}" alt="">
+                        <img class="home-card" width="100px" src="{{ asset('assets/images/icons/service.png') }}"
+                            alt="">
                         <h4>After Sales Service</h4>
                     </center>
                 </div>
@@ -145,62 +177,18 @@
         </div>
     </section><!-- who-we-are -->
 
-    <section class="fact-type2">
-        <h1 class="text-center text-dark font-weight-bold">JUMLAH PENGUNJUNG</h1>
-        <div class="container">
-            <div class="row my-5">
-                <div class="counter counter-type2 col-lg-4 col-sm-12">
-                    <center>
-                        <div class="content-counter hv-background-before">
-                            <div class="icon-count"><span class="icon-portfolio"></span></div>
-                            <div class="numb-count-wrap">
-                                <span class="numb-count" data-from="0" data-to="{{ $totalVisitors }}"
-                                    data-speed="2000" data-inviewport="yes">{{ $totalVisitors }}</span>
-                            </div>
-                            <div class="name-count">Total</div>
-                        </div>
-                    </center>
-                </div>
-                <div class="counter counter-type2 col-lg-4 col-sm-12">
-                    <center>
-                        <div class="content-counter hv-background-before">
-                            <div class="icon-count"><span class="icon-observation"></span></div>
-                            <div class="numb-count-wrap">
-                                <span class="numb-count" data-from="0" data-to="{{ $todayVisitors }}"
-                                    data-speed="2000" data-inviewport="yes">{{ $todayVisitors }}</span>
-                            </div>
-                            <div class="name-count">Hari Ini</div>
-                        </div>
-                    </center>
-                </div>
-                <div class="counter counter-type2 col-lg-4 col-sm-12">
-                    <center>
-                        <div class="content-counter hv-background-before">
-                            <div class="icon-count"><span class="icon-spam"></span></div>
-                            <div class="numb-count-wrap">
-                                <span class="numb-count" data-from="0" data-to="{{ $monthVisitors }}"
-                                    data-speed="2000" data-inviewport="yes">{{ $monthVisitors }}</span>
-                            </div>
-                            <div class="name-count">Bulan Ini</div>
-                        </div>
-                    </center>
-                </div>
-            </div>
-        </div>
-    </section><!-- fact -->
-
-    <section class="container-fluid px-5 my-5">
-        <h1 class="text-center text-dark font-weight-bold">BERITA TERKINI</h1>
+    <section class="container-fluid px-5 mb-5">
+        <h2 class="text-center text-dark font-weight-bold">BERITA TERKINI</h2>
         <div class="pb-5">
             <div class="row mt-5">
                 @foreach ($news as $new)
                     <div class="col-4">
-                        <div class="w-100 p-5 shadow-sm">
+                        <div class="w-100 p-5 border rounded">
                             <div class="">
                                 <h5 class="h5 text-dark">{{ $new->title }}</h5>
                                 <div>
-                                    <img src="{{ asset('assets/images/icons/date.png') }}" alt="Date"
-                                        class="d-inline-block" width="20px">
+                                    {{-- <img src="{{ asset('assets/images/icons/date.png') }}" alt="Date"
+                                        class="d-inline-block" width="20px"> --}}
                                     <span class="card-subtitle my-2 text-muted">
                                         {{ now()->make($new->created_at)->format('l, d F Y') }}</span>
                                     |
@@ -213,8 +201,9 @@
                                     {!! $new->body !!}
                                 </div>
                                 <hr>
-                                <a href="{{ route('news-detail', $new->id) }}" class="btn btn-sm btn-primary">Read
-                                    More</a>
+                                <a href="{{ route('news-detail', $new->id) }}" class="btn btn-light btn-block">
+                                    More <i class="fas fa-arrow-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -222,6 +211,50 @@
             </div>
         </div>
     </section>
+
+    <section class="fact-type2">
+        <h2 class="text-center text-dark font-weight-bold">PENGUNJUNG</h2>
+        <div class="container">
+            <div class="row my-5">
+                <div class="counter counter-type2 col-lg-4 col-sm-12">
+                    <center>
+                        <div class="content-counter hv-background-before">
+                            <div class="icon-count"><span class="icon-portfolio"></span></div>
+                            <div class="numb-count-wrap">
+                                <span class="numb-count font-weight-light" data-from="0" data-to="{{ $totalVisitors }}"
+                                    data-speed="2000" data-inviewport="yes">{{ $totalVisitors }}</span>
+                            </div>
+                            <div class="name-count font-weight-light">Total</div>
+                        </div>
+                    </center>
+                </div>
+                <div class="counter counter-type2 col-lg-4 col-sm-12">
+                    <center>
+                        <div class="content-counter hv-background-before">
+                            <div class="icon-count"><span class="icon-observation"></span></div>
+                            <div class="numb-count-wrap">
+                                <span class="numb-count font-weight-light" data-from="0" data-to="{{ $todayVisitors }}"
+                                    data-speed="2000" data-inviewport="yes">{{ $todayVisitors }}</span>
+                            </div>
+                            <div class="name-count font-weight-light">Hari Ini</div>
+                        </div>
+                    </center>
+                </div>
+                <div class="counter counter-type2 col-lg-4 col-sm-12">
+                    <center>
+                        <div class="content-counter hv-background-before">
+                            <div class="icon-count"><span class="icon-spam"></span></div>
+                            <div class="numb-count-wrap">
+                                <span class="numb-count font-weight-light" data-from="0" data-to="{{ $monthVisitors }}"
+                                    data-speed="2000" data-inviewport="yes">{{ $monthVisitors }}</span>
+                            </div>
+                            <div class="name-count font-weight-light">Bulan Ini</div>
+                        </div>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </section><!-- fact -->
 
     <section class="cta-type2 parallax parallax3">
         <div class="section-overlay"></div>
