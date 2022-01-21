@@ -20,6 +20,7 @@ class VisitorController extends Controller
             ->count();
         $data['monthVisitors'] = DB::table('visitors')
             ->whereMonth('created_at', now()->month)
+            ->whereYear('created_at', now()->year)
             ->count();
         $data['categories'] = DB::table('categories')->get();
         $data['news'] = DB::table('news')->orderByDesc('id')->limit(3)->get();

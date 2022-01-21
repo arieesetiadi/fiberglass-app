@@ -45,7 +45,7 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ $product->name }}</h5>
-                            <h5 class="card-text mb-3">Stok : {{ $product->stock }}</h5>
+                            <h5 class="card-text mb-3">Rp. {{ number_format($product->price) }}</h5>
                             <a href="{{ route('product-detail', $product->id) }}" class="btn btn-primary">Detail</a>
                         </div>
                     </div>

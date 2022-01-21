@@ -17,11 +17,18 @@
                                     required>
                             </div>
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-3">
                                     <div class="mb-3">
                                         <label for="stok" class="form-label">Stok Produk :</label>
                                         <input name="stock" type="number" class="form-control" id="stok"
                                             placeholder="Stok Produk" value="0" required>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="mb-3">
+                                        <label for="price" class="form-label">Harga :</label>
+                                        <input name="price" type="number" class="form-control" id="price"
+                                            placeholder="Harga Produk" value="0" required>
                                     </div>
                                 </div>
                                 <div class="col-6">

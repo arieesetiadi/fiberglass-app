@@ -70,6 +70,7 @@
                                                 <th>#</th>
                                                 <th>Nama</th>
                                                 <th>Stok</th>
+                                                <th>Harga</th>
                                                 <th>Kategori</th>
                                                 <th>Dibuat Oleh</th>
                                                 <th>Dibuat Pada</th>
@@ -88,6 +89,7 @@
                                                     <td>{{ $products->firstItem() + $loop->index }}</td>
                                                     <td>{{ $product->name }}</td>
                                                     <td>{{ $product->stock }}</td>
+                                                    <td>Rp. {{ number_format($product->price) }}</td>
                                                     <td>{{ $product->category }}</td>
                                                     <td>{{ $product->user }}</td>
                                                     <td>{{ $product->created_at }}</td>

@@ -51,9 +51,10 @@
         </div>
     </div><!-- flat-slider -->
 
-    <section class="features mt-5 py-5">
+    {{-- Visi Misi --}}
+    <section class="features my-5 py-5">
         <div class="container d-lg-flex">
-            <div class="iconbox-features hv-background-before shadow-none rounded">
+            <div class="iconbox-features hv-background-before shadow-none rounded active">
                 <div class="iconbox-icon"><span class="icon-shield"></span></div>
                 <div class="iconbox-content px-5">
                     <h3 class="title">Visi</h3>
@@ -64,7 +65,7 @@
                     </p>
                 </div>
             </div>
-            <div class="iconbox-features hv-background-before shadow-none rounded">
+            <div class="iconbox-features hv-background-before shadow-none rounded border">
                 <div class="iconbox-icon"><span class="icon-alarm"></span></div>
                 <div class="iconbox-content px-5">
                     <h3 class="title">Misi</h3>
@@ -79,11 +80,20 @@
         </div>
     </section><!-- features -->
 
-    <section class="features mb-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    {{-- Premium Quality --}}
+    <section class="features my-5 py-5">
         <div class="container d-lg-flex">
             <div class="row">
                 <div class="col-lg-4">
-                    <div class="iconbox-features shadow-none ">
+                    <div class="iconbox-features shadow-none border">
                         {{-- <div class="iconbox-icon"> --}}
                         {{-- <span class="icon-shield"></span> --}}
                         <img src="{{ asset('assets-3/images/premium-quality.jpeg') }}" alt="Premium"
@@ -98,7 +108,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="iconbox-features shadow-none ">
+                    <div class="iconbox-features shadow-none border">
                         {{-- <div class="iconbox-icon"><span class="icon-alarm"></span></div> --}}
                         <img src="{{ asset('assets-3/images/service.jpeg') }}" alt="Guaranteed"
                             class="rounded-circle home-card" style="height: 150px">
@@ -112,7 +122,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="iconbox-features shadow-none ">
+                    <div class="iconbox-features shadow-none border">
                         {{-- <div class="iconbox-icon"><span class="icon-alarm"></span></div> --}}
                         <img src="{{ asset('assets-3/images/guaranteed.jpeg') }}" alt="Guaranteed"
                             class="rounded-circle home-card" style="height: 150px">
@@ -129,71 +139,89 @@
         </div>
     </section><!-- features -->
 
-    <section class="who-we-are who-we-are-style1">
-        <h2 class="text-center text-dark font-weight-bold">MENGAPA MEMILIH KAMI ?</h2>
-        <div class="container pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    {{-- Mengapa memilih kami --}}
+    <section class="features my-5 py-5">
+        <h1 class="text-center text-dark font-weight-bold mb-5">MENGAPA MEMILIH KAMI ?</h1>
+        <div class="container">
             <div class="row d-flex align-items-center">
-                <div class="col-lg-4 my-5">
+                <div class="col-lg-4">
                     <center>
-                        <img class="home-card" width="100px" src="{{ asset('assets/images/icons/quality.png') }}"
+                        <img class="home-card" width="140px" src="{{ asset('assets/images/icons/quality.png') }}"
                             alt="">
-                        <h4 class="mt-3">Berkualitas</h4>
+                        <h4 class="font-weight-bold text-dark mt-4">Berkualitas</h4>
                     </center>
                 </div>
                 <div class="col-lg-4 my-5">
                     <center>
-                        <img width="100px" src="{{ asset('assets/images/icons/structure.png') }}" alt="">
+                        <img width="100px" src="{{ asset('assets/images/icons/sitemap.png') }}" alt="">
                     </center>
                 </div>
                 <div class="col-lg-4 my-5">
                     <center>
-                        <img class="home-card" width="100px" src="{{ asset('assets/images/icons/customer.png') }}"
+                        <img class="home-card" width="140px" src="{{ asset('assets/images/icons/customer.png') }}"
                             alt="">
-                        <h4 class="mt-3">Mengutamakan Konsumen</h4>
+                        <h4 class="font-weight-bold text-dark mt-4">Mengutamakan Konsumen</h4>
                     </center>
                 </div>
                 <div class="col-lg-4 my-5">
                     <center>
-                        <img class="home-card" width="100px" src="{{ asset('assets/images/icons/work.png') }}"
+                        <img class="home-card" width="140px" src="{{ asset('assets/images/icons/work.png') }}"
                             alt="">
-                        <h4 class="mt-3">Profesional</h4>
+                        <h4 class="font-weight-bold text-dark mt-4">Profesional</h4>
                     </center>
                 </div>
                 <div class="col-lg-4 my-5">
                     <center>
-                        <img class="home-card" width="100px" src="{{ asset('assets/images/icons/experience.png') }}"
+                        <img class="home-card" width="140px" src="{{ asset('assets/images/icons/experience.png') }}"
                             alt="">
-                        <h4 class="mt-3">Berpengalaman</h4>
+                        <h4 class="font-weight-bold text-dark mt-4">Berpengalaman</h4>
                     </center>
                 </div>
                 <div class="col-lg-4 my-5">
                     <center>
-                        <img class="home-card" width="100px" src="{{ asset('assets/images/icons/service.png') }}"
+                        <img class="home-card" width="140px" src="{{ asset('assets/images/icons/service.png') }}"
                             alt="">
-                        <h4>After Sales Service</h4>
+                        <h4 class="font-weight-bold text-dark mt-4">After Sales Service</h4>
                     </center>
                 </div>
             </div>
         </div>
     </section><!-- who-we-are -->
 
-    <section class="container-fluid px-5 mb-5">
-        <h2 class="text-center text-dark font-weight-bold">BERITA TERKINI</h2>
-        <div class="pb-5">
-            <div class="row mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    {{-- Berita Terkini --}}
+    <section class="features my-5 py-5">
+        <h1 class="text-center text-dark font-weight-bold">BERITA TERKINI</h1>
+        <div class="container">
+            <div class="row">
                 @foreach ($news as $new)
-                    <div class="col-4">
+                    <div class="col-4 mt-5 pt-5">
                         <div class="w-100 p-5 border rounded">
                             <div class="">
                                 <h5 class="h5 text-dark">{{ $new->title }}</h5>
                                 <div>
                                     {{-- <img src="{{ asset('assets/images/icons/date.png') }}" alt="Date"
-                                        class="d-inline-block" width="20px"> --}}
+                                            class="d-inline-block" width="20px"> --}}
                                     <span class="card-subtitle my-2 text-muted">
                                         {{ now()->make($new->created_at)->format('l, d F Y') }}</span>
                                     |
                                     {{-- <img src="{{ asset('assets/images/icons/tag.png') }}" alt="Date"
-                                        class="d-inline-block" width="10px"> --}}
+                                            class="d-inline-block" width="10px"> --}}
                                     <span>Uncategorized</span>
                                 </div>
                                 <hr>
@@ -212,9 +240,17 @@
         </div>
     </section>
 
-    <section class="fact-type2">
-        <h2 class="text-center text-dark font-weight-bold">PENGUNJUNG</h2>
-        <div class="container">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <section class="features my-5 py-5">
+        <h1 class="text-center text-dark font-weight-bold">PENGUNJUNG</h1>
+        <div class="container pt-5">
             <div class="row my-5">
                 <div class="counter counter-type2 col-lg-4 col-sm-12">
                     <center>
