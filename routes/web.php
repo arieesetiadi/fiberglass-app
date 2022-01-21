@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GeoController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\FAQController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\GalleryController;
@@ -61,7 +62,6 @@ Route::middleware(['guest'])->group(function () {
     Route::post('/daftar', [AuthController::class, 'daftarProses'])->name('daftar');
 });
 
-
 // Route Admin ==================
 Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
 Route::get('/settings', [AdminController::class, 'settings'])->name('settings');
@@ -87,6 +87,9 @@ Route::resource('/news', NewsController::class);
 
 // Route FAQ
 Route::resource('/faq', FAQController::class);
+
+// Route Downloads
+Route::resource('/downloads', DownloadController::class);
 
 
 // Route Visitor ================

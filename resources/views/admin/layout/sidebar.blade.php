@@ -75,6 +75,14 @@
                 <div class="menu-title">FAQ</div>
             </a>
         </li>
+
+        <li>
+            <a href="{{ route('downloads.index') }}" class="" aria-expanded="true">
+                <div class="parent-icon"><i class="bi bi-cloud-arrow-down"></i>
+                </div>
+                <div class="menu-title">Downloads</div>
+            </a>
+        </li>
     </ul>
     <!--end navigation-->
 </aside>
