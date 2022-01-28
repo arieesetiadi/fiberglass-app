@@ -35,9 +35,10 @@
                                             src="{{ asset('assets/images/products/') . '/' . $image->image }}"
                                             style="height: 350px;">
                                     @empty
-                                        <img class="mySlides"
+                                        <img class="mySlides d-block"
                                             src="{{ asset('assets/images/products/default.png') }}"
                                             style="height: 350px;">
+                                        <h1 class="text-center my-5">This page is under construction</h1>
                                     @endforelse
                                 </center>
                             </div>
@@ -79,8 +80,8 @@
                                 {!! $product->description !!}
                             @else
                                 <h6 class="h6 d-block">Deskripsi Tidak Tersedia.</h6>
-                                <p class="text-white text-justify">
-                                    @for ($i = 0; $i < 10; $i++)
+                                <p class="text-white text-justify" style="user-select: none">
+                                    @for ($i = 0; $i < 100; $i++)
                                         {{ $product->slug }}
                                     @endfor
                                 </p>

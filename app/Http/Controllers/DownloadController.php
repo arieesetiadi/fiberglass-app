@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class DownloadController extends Controller
 {
@@ -19,6 +20,16 @@ class DownloadController extends Controller
     public function index()
     {
         $data['title'] = 'Downloads';
+        $data['downloads'] = DB::table('downloads')->orderByDesc('id')->get();
+        $data['category1'] = [
+            'Kartu Nama',
+            'Compro',
+        ];
+        $data['category2'] = [
+            'Brochure',
+            'Price List'
+        ];
+        $data['productCategory'] = DB::table('categories')->get();
 
         return view('admin.downloads.index', $data);
     }
@@ -45,6 +56,7 @@ class DownloadController extends Controller
             DB::table('downloads')->insert([
                 'name' => $request->name,
                 'content' => $request->content,
+                'category' => 'URL',
                 'type' => 'url',
                 'created_at' => now()->toDateTimeString()
             ]);
@@ -57,12 +69,14 @@ class DownloadController extends Controller
             DB::table('downloads')->insert([
                 'name' => $request->name,
                 'content' => $contentName,
+                'category' => $request->category,
+                'product_category' => $request->productCategory ??= null,
                 'type' => 'file',
                 'created_at' => now()->toDateTimeString()
             ]);
         }
 
-        return view('admin.downloads.index')->with('status', 'Berhasil menambah download konten');
+        return redirect()->route('downloads.index')->with('status', 'Berhasil menambah download konten');
     }
 
     /**
@@ -84,7 +98,10 @@ class DownloadController extends Controller
      */
     public function edit($id)
     {
-        dd($id);
+        $data['title'] = 'Ubah Downloads';
+        $data['download'] = DB::table('downloads')->where('id', $id)->get();
+
+        return view('admin.downloads.edit', $data);
     }
 
     /**
@@ -107,6 +124,19 @@ class DownloadController extends Controller
      */
     public function destroy($id)
     {
-        dd($id);
+        $download = DB::table('downloads')->where('id', $id);
+
+        if ($download->get()[0]->type == 'file') {
+            $content = $download->get()[0]->content;
+            $path = public_path('downloadable') . '/' . $content;
+
+            if (File::exists($path)) {
+                File::delete($path);
+            }
+        }
+
+        $download->delete();
+
+        return back()->with('status', 'Berhasil menghapus konten');
     }
 }

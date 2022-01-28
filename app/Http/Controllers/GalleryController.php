@@ -24,6 +24,7 @@ class GalleryController extends Controller
         $data['title'] = 'Gallery';
         $data['counts'] = DB::table('gallery')->count();
         $data['galleries'] = DB::table('gallery')
+            ->orderByDesc('id')
             ->paginate(50);
 
         return view('admin.gallery.index', $data);

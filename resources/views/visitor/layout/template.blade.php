@@ -172,9 +172,9 @@ $logo = DB::table('logos')
                                     <a href="{{ route('kontak') }}" style="font-weight: 100">Contact</a>
                                 </li>
                                 <li>
-                                    <a target="_blank" href="https://www.w3schools.com/" title="Download Our Brochure"
-                                        download>
-                                        <i class="fas fa-cloud-download-alt fa-2x"></i>
+                                    <a href="{{ route('download') }}" style="font-weight: 100">
+                                        Downloads
+                                        {{-- <i class="fas fa-cloud-download-alt fa-2x"></i> --}}
                                     </a>
                                 </li>
                             </ul>

@@ -79,7 +79,7 @@
                                         <tbody>
                                             @foreach ($news as $new)
                                                 <tr>
-                                                    <td>{{ $loop->index + 1 }}</td>
+                                                    <td>{{ $news->firstItem() + $loop->index }}</td>
                                                     <td>{{ $new->title }}</td>
                                                     <td>{{ $new->created_at }}</td>
                                                     <td>{{ $new->updated_at ??= '-' }}</td>

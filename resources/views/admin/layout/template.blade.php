@@ -12,6 +12,7 @@ $logo = DB::table('logos')
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     {{-- <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" /> --}}
     <!--plugins-->
     <link href="{{ asset('assets-2/plugins/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" />
@@ -85,6 +86,9 @@ $logo = DB::table('logos')
 
 
     <!-- Bootstrap bundle JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
+        integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset('assets-2/js/bootstrap.bundle.min.js') }}"></script>
     <!--plugins-->
     {{-- <script src="{{ asset('assets-2/plugins/simplebar/js/simplebar.min.js') }}"></script> --}}

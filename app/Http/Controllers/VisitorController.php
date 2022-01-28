@@ -107,6 +107,7 @@ class VisitorController extends Controller
     {
         $data['title'] = 'Job Vacancy';
         $data['categories'] = DB::table('categories')->get();
+        $data['jobs'] = [];
 
         return view('visitor.job', $data);
     }
@@ -115,6 +116,40 @@ class VisitorController extends Controller
     {
         $data['title'] = 'Download';
         $data['categories'] = DB::table('categories')->get();
+        $productCategories = DB::table('categories')->get();
+        $data['categories1'] = [
+            'Kartu Nama',
+            'Compro',
+        ];
+        $data['categories2'] = [
+            'Brochure',
+            'Price List'
+        ];
+
+        foreach ($data['categories1'] as $category) {
+            // $index = strtolower(str_replace(' ', '', $category));
+            $content = DB::table('downloads')
+                ->where('category', $category)
+                ->get();
+
+            if (count($content) > 0) {
+                $data['downloads1'][$category] = $content;
+            }
+        }
+
+        foreach ($data['categories2'] as $category) {
+            foreach ($productCategories as $pCategory) {
+                $content = DB::table('downloads')
+                    ->where('category', $category)
+                    ->where('product_category', $pCategory->name)
+                    ->get();
+
+                if (count($content) > 0) {
+                    $data['downloads2'][$category][$pCategory->name][] =  $content;
+                    $data['downloads2'][$category][$pCategory->name][] =  $pCategory->name;
+                }
+            }
+        }
 
         return view('visitor.download', $data);
     }

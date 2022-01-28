@@ -209,7 +209,7 @@
         <h1 class="text-center text-dark font-weight-bold">BERITA TERKINI</h1>
         <div class="container">
             <div class="row">
-                @foreach ($news as $new)
+                @forelse ($news as $new)
                     <div class="col-4 mt-5 pt-5">
                         <div class="w-100 p-5 border rounded">
                             <div class="">
@@ -235,7 +235,12 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <div class="col">
+                        <h3 class="text-center">Tidak ada berita terkini</h3>
+                    </div>
+                @endforelse
+
             </div>
         </div>
     </section>

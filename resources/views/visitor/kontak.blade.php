@@ -108,12 +108,11 @@
             <div class="col-lg-12 d-flex justify-content-center">
                 <div>
                     <h1 class="text-center text-dark h3">Our Location</h1>
-                    <div class="mapouter my-5">
-                        <div class="gmap_canvas"><iframe width="1000px" height="500" id="gmap_canvas"
-                                src="https://maps.google.com/maps?q=Tegal%20Alur,%20Tangerang&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    <div class="mapouter">
+                        <div class="gmap_canvas"><iframe width="1000" height="500" id="gmap_canvas"
+                                src="https://maps.google.com/maps?q=Jl.%20Ambon,%20Kamal,%20Kec.%20Kalideres,%20Kota%20Jakarta%20Barat,%20Daerah%20Khusus%20Ibukota%20Jakarta%2011810&t=&z=13&ie=UTF8&iwloc=&output=embed"
                                 frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                                href="https://www.embedgooglemap.net/blog/divi-discount-code-elegant-themes-coupon/">divi
-                                discount</a><br>
+                                href="https://2piratebay.org"></a><br>
                             <style>
                                 .mapouter {
                                     position: relative;
@@ -122,7 +121,7 @@
                                     width: 1000px;
                                 }
 
-                            </style><a href="https://www.embedgooglemap.net">using google maps on websites</a>
+                            </style><a href="https://www.embedgooglemap.net">embed google map html</a>
                             <style>
                                 .gmap_canvas {
                                     overflow: hidden;

@@ -83,6 +83,14 @@
                 <div class="menu-title">Downloads</div>
             </a>
         </li>
+
+        <li>
+            <a href="{{ route('jobs.index') }}" class="" aria-expanded="true">
+                <div class="parent-icon"><i class="bi bi-person-lines-fill"></i>
+                </div>
+                <div class="menu-title">Job Vacancy</div>
+            </a>
+        </li>
     </ul>
     <!--end navigation-->
 </aside>

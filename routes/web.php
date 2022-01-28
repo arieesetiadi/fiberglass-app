@@ -10,6 +10,7 @@ use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\FAQController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\JobController;
 use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\NewsController;
@@ -90,6 +91,9 @@ Route::resource('/faq', FAQController::class);
 
 // Route Downloads
 Route::resource('/downloads', DownloadController::class);
+
+// Route Jobs
+Route::resource('/jobs', JobController::class);
 
 
 // Route Visitor ================

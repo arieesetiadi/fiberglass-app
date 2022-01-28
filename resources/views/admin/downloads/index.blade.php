@@ -44,6 +44,16 @@
                                     </div>
                                 </a>
                             </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" data-bs-toggle="tab" href="#primarythird" role="tab"
+                                    aria-selected="false">
+                                    <div class="d-flex align-items-center">
+                                        <div class="tab-icon"><i class="bx bx-user-pin font-18 me-1"></i>
+                                        </div>
+                                        <div class="tab-title">Brochure / Price List</div>
+                                    </div>
+                                </a>
+                            </li>
                         </ul>
                         <div class="tab-content py-3">
                             <div class="tab-pane fade active show" id="primaryhome" role="tabpanel">
@@ -73,6 +83,51 @@
                                             placeholder="Nama Konten" required>
                                     </div>
                                     <div class="mb-3">
+                                        <label for="name" class="form-label">Kategori :</label>
+                                        <select name="category" class="form-select" aria-label="Default select example">
+                                            <option selected hidden>Kategori</option>
+                                            @foreach ($category1 as $item)
+                                                <option value="{{ $item }}">{{ $item }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="content" class="form-label">File / Image :</label>
+                                        <input name="content" type="file" class="form-control" id="content" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <button class="btn btn-primary">Simpan</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="primarythird" role="tabpanel">
+                                <form action="{{ route('downloads.store') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Nama Konten :</label>
+                                        <input name="name" type="text" class="form-control" id="name"
+                                            placeholder="Nama Konten" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Kategori :</label>
+                                        <select name="category" class="form-select" aria-label="Default select example">
+                                            <option selected hidden>Kategori</option>
+                                            @foreach ($category2 as $item)
+                                                <option value="{{ $item }}">{{ $item }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Kategori Produk :</label>
+                                        <select name="productCategory" class="form-select"
+                                            aria-label="Default select example">
+                                            <option selected hidden>Kategori Produk</option>
+                                            @foreach ($productCategory as $item)
+                                                <option value="{{ $item->name }}">{{ $item->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
                                         <label for="content" class="form-label">File / Image :</label>
                                         <input name="content" type="file" class="form-control" id="content" required>
                                     </div>
@@ -92,14 +147,40 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nama</th>
-                                <th>Jenis</th>
-                                <th>URL</th>
+                                <th>Kategori</th>
+                                <th>Content</th>
                                 <th>
                                     <span class="mx-4 d-inline-block">Aksi</span>
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($downloads as $download)
+                                <tr>
+                                    <td>{{ $loop->index + 1 }}</td>
+                                    <td>{{ $download->name }}</td>
+                                    <td>{{ $download->category }}</td>
+                                    @if ($download->type == 'url')
+                                        <td>
+                                            <a href="{{ $download->content }}"
+                                                target="_blank">{{ $download->content }}</a>
+                                        </td>
+                                    @else
+                                        <td>{{ $download->content }}</td>
+                                    @endif
+                                    <td>
+                                        <form action="{{ route('downloads.destroy', $download->id) }}"
+                                            class="d-inline-block" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button onclick="return confirm('Konten ini akan dihapus')" type="submit"
+                                                class="btn d-inline-block">
+                                                <i class="bi bi-trash-fill"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
