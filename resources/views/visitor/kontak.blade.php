@@ -29,6 +29,16 @@
                     </div>
                 </div>
                 <div class="col-lg-4 mb-5">
+                    @if (session('status'))
+                        <div class="alert alert-dismissible alert-success d-flex align-items-center" role="alert">
+                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+                                <use xlink:href="#check-circle-fill" />
+                            </svg>
+                            <div>
+                                {{ session('status') }}
+                            </div>
+                        </div>
+                    @endif
                     <form action="{{ route('send-email') }}" method="POST" class="mt-3">
                         @csrf
                         <div class="form-group">
@@ -79,7 +89,7 @@
         <div class="row my-5">
             @foreach ($socials as $social)
                 @if ($social->type == 'phone' || $social->type == 'email')
-                    <div class="col-lg-3 py-3">
+                    <div class="col-lg-3 col-6 py-3">
                         <center>
                             <a>
                                 <img width="50px" src="{{ asset('assets/images/icons/') . '/' . $social->type . '.png' }}"
@@ -89,7 +99,7 @@
                         </center>
                     </div>
                 @else
-                    <div class="col-lg-3 py-3">
+                    <div class="col-lg-3 col-6 py-3">
                         <center>
                             <a target="_blank" href="{{ $social->url }}">
                                 <img width="50px" src="{{ asset('assets/images/icons/') . '/' . $social->type . '.png' }}"
@@ -109,10 +119,11 @@
                 <div>
                     <h1 class="text-center text-dark h3">Our Location</h1>
                     <div class="mapouter">
-                        <div class="gmap_canvas"><iframe width="1000" height="500" id="gmap_canvas"
+                        <div class="gmap_canvas">
+                            <iframe width="1000" height="500" id="gmap_canvas"
                                 src="https://maps.google.com/maps?q=Jl.%20Ambon,%20Kamal,%20Kec.%20Kalideres,%20Kota%20Jakarta%20Barat,%20Daerah%20Khusus%20Ibukota%20Jakarta%2011810&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                                href="https://2piratebay.org"></a><br>
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            <a href="https://2piratebay.org"></a><br>
                             <style>
                                 .mapouter {
                                     position: relative;

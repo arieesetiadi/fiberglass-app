@@ -18,16 +18,16 @@
     <div class="container py-5">
         <div class="row">
             @foreach ($faqs as $i => $faq)
-                <div class="col-lg-6">
-                    <table border="0" class="table table-borderless">
+                <div class="col-lg-6 col-12">
+                    <table border="0" class="table table-responsive-sm table-borderless">
                         <tr>
-                            <td style="width: 100px">
+                            <td style="width: 50px">
                                 <img width="25px" src="{{ asset('assets/images/icons/question.png') }}" alt="">
                             </td>
                             <th style="width: 10px"> : </th>
-                            <th>
+                            <th style="word-wrap: break-word">
                                 <a type="button" class="faq-modal-button" data-toggle="modal"
-                                    data-target="#faqModal{{ $i }}" style="width: 450px">
+                                    data-target="#faqModal{{ $i }}">
                                     {{ $faq->question }}
                                 </a>
                             </th>

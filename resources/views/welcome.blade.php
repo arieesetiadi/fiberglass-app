@@ -9,8 +9,10 @@
 </head>
 
 <body>
-    <p>Dear Administrator {{ $admin->name }}</p>
+    <p>Dear Administrator {{ $admin->name }},</p>
+    <br>
     <p>{{ $request->message }}</p>
+    <br>
     <p>Salam hangat,</p>
     <p>{{ $request->name }}</p>
 </body>

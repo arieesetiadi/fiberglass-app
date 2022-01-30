@@ -25,9 +25,9 @@
         </div>
         <div class="row">
             @forelse ($products->unique('id') as $product)
-                <div class="col-lg-3 p-4">
-                    <div class="card" style="width: 18rem;">
-                        <div class="p-5" style="min-height: 300px">
+                <div class="col-sm-6 col-12 col-lg-3 p-4">
+                    <div class="card">
+                        <div class="px-5 pt-5" style="min-height: 300px">
                             @php
                                 $cover = DB::table('product_images')
                                     ->where('product_id', $product->id)

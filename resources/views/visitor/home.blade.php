@@ -210,7 +210,7 @@
         <div class="container">
             <div class="row">
                 @forelse ($news as $new)
-                    <div class="col-4 mt-5 pt-5">
+                    <div class="col-lg-4 mt-lg-5 pt-5">
                         <div class="w-100 p-5 border rounded">
                             <div class="">
                                 <h5 class="h5 text-dark">{{ $new->title }}</h5>

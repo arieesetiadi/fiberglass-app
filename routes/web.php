@@ -58,9 +58,9 @@ Route::get('/toggle-arsip', [ProdukController::class, 'toggleArsip'])->name('tog
 Route::get('/logout', [AuthController::class, 'logoutProses'])->name('logout');
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('login');
-    Route::post('/login', [AuthController::class, 'loginProses'])->name('login');
+    Route::post('/login', [AuthController::class, 'loginProses']);
     Route::get('/daftar', [AuthController::class, 'daftar'])->name('daftar');
-    Route::post('/daftar', [AuthController::class, 'daftarProses'])->name('daftar');
+    Route::post('/daftar', [AuthController::class, 'daftarProses']);
 });
 
 // Route Admin ==================
@@ -102,6 +102,7 @@ Route::get('/produk/kategori/{idKategori}', [VisitorController::class, 'kategori
 Route::get('/produk/detail/{id}', [VisitorController::class, 'productDetail'])->name('product-detail');
 Route::get('/kontak', [VisitorController::class, 'kontak'])->name('kontak');
 Route::get('/job', [VisitorController::class, 'job'])->name('job');
+Route::get('/detail-job/{id}', [VisitorController::class, 'detailJob'])->name('detail-job');
 Route::get('/investor', [VisitorController::class, 'investor'])->name('investor');
 Route::get('/about/{kategori}', [VisitorController::class, 'about'])->name('about');
 Route::get('/download', [VisitorController::class, 'download'])->name('download');

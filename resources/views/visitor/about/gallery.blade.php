@@ -19,9 +19,9 @@
     <div class="container">
         <div class="row my-5">
             @forelse ($galleries as $gallery)
-                <div class="col-lg-3 my-4">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{ asset('assets-3/images/gallery/') . '/' . $gallery->image }}"
+                <div class="col-lg-3 col-12 my-4">
+                    <div class="card">
+                        <img class=" card-img-top" src="{{ asset('assets-3/images/gallery/') . '/' . $gallery->image }}"
                             alt="Card image cap">
                         <div class="card-body">
                             <center>

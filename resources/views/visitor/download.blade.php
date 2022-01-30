@@ -39,9 +39,9 @@
                 <h1 class="my-4 text-dark">{{ $cCategory }}</h1>
                 <div class="row my-4">
                     @foreach ($downloads2[$cCategory] as $item)
-                        <div class="col-lg-2">
+                        <div class="col-lg-2 my-1">
                             <div class="dropdown w-100">
-                                <button class="btn btn-block btn-primary w-100">
+                                <button class="btn btn-block btn-light border w-100">
                                     <span>{{ $item[1] }} </span> <i class="bi bi-chevron-compact-down"></i>
                                 </button>
                                 @foreach ($item[0] as $subItem)
@@ -67,10 +67,11 @@
                     @foreach ($downloads1[$cCategory] as $item)
                         <div class="col-lg-2">
                             <center>
-                                <a target="_blank" href="{{ asset('downloadable') . '/' . $item->content }}">
+                                <a target="_blank" href="{{ asset('downloadable') . '/' . $item->content }}"
+                                    class="my-3 d-inline-block">
                                     @if ($item->category == 'Kartu Nama')
                                         <img src="{{ asset('downloadable') . '/' . $item->content }}"
-                                            alt="{{ $item->category }}" class="rounded">
+                                            alt="{{ $item->category }}" class="rounded w-100 my-2">
                                     @endif
                                     <p class="d-inline-block mt-1 mb-2">
                                         {{ $item->name }}

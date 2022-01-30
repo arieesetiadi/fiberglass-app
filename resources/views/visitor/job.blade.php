@@ -20,7 +20,7 @@
     <div class="container my-5">
         <div class="row">
             @forelse ($jobs as $job)
-                <div class="col-4">
+                <div class="col-12 col-sm-6 col-lg-3 col-md-4">
                     <div class="w-100 p-5 border rounded">
                         <div class="">
                             <h5 class="h5 text-dark">{{ $job->title }}</h5>
@@ -40,20 +40,23 @@
                             </div>
                             <hr>
                             {{-- {{ route('jobs-detail', $job->id) }} --}}
-                            <a href="#" class="btn btn-light btn-block">
+                            <a href="{{ route('detail-job', $job->id) }}" class="btn btn-light btn-block">
                                 More <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
+
+                <center>
+                    <p class="d-block mt-3">{{ $jobs->links() }}</p>
+                </center>
             @empty
-                <h6>We have no job vacancy currently, please check our website regularly to find out our job vacancy later.
+                <h6 class="m-5 text-justify">We have no job vacancy currently, please check our website regularly to find
+                    out
+                    our job vacancy later.
                     You can also send your Resume to our email and we will contact you when we have suitable opportunity for
                     you</h6>
             @endforelse
         </div>
-        <center>
-            <p class="d-block mt-3">{{ $jobs->links() }}</p>
-        </center>
     </div>
 @endsection

@@ -128,7 +128,7 @@ $logo = DB::table('logos')
                                     <a href="{{ route('produk.kategori', 0) }}" style="font-weight: 100">Products</a>
                                     <ul class="sub-menu row" style="width: 500px">
                                         @foreach ($categories as $category)
-                                            <li class="col-6">
+                                            <li class="col-12 col-lg-6">
                                                 <a
                                                     href="{{ route('produk.kategori', $category->id) }}">{{ $category->name }}</a>
                                             </li>
@@ -145,25 +145,25 @@ $logo = DB::table('logos')
                                 <li>
                                     <a href="#" style="font-weight: 100">About Us</a>
                                     <ul class="sub-menu row" style="width: 350px">
-                                        <li class="col-6">
+                                        <li class="col-12 col-lg-6">
                                             <a href="{{ route('about', 'FAQ') }}">FAQ</a>
                                         </li>
-                                        {{-- <li class="col-6">
+                                        {{-- <li class="col-12 col-lg-6">
                                             <a href="{{ route('about', 'Fiberglass') }}">Fiberglass</a>
                                         </li> --}}
-                                        {{-- <li class="col-6">
+                                        {{-- <li class="col-12 col-lg-6">
                                             <a href="{{ route('about', 'Yacht') }}">Yacht</a>
                                         </li> --}}
-                                        {{-- <li class="col-6">
+                                        {{-- <li class="col-12 col-lg-6">
                                             <a href="{{ route('about', 'Kancing') }}">Kancing</a>
                                         </li> --}}
-                                        <li class="col-6">
+                                        <li class="col-12 col-lg-6">
                                             <a href="{{ route('about', 'Gallery') }}">Gallery</a>
                                         </li>
-                                        <li class="col-6">
+                                        <li class="col-12 col-lg-6">
                                             <a href="{{ route('about', 'Event') }}">Event</a>
                                         </li>
-                                        <li class="col-6">
+                                        <li class="col-12 col-lg-6">
                                             <a href="{{ route('about', 'Our Client') }}">Our Client</a>
                                         </li>
                                     </ul>

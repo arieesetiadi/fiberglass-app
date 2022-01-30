@@ -107,9 +107,18 @@ class VisitorController extends Controller
     {
         $data['title'] = 'Job Vacancy';
         $data['categories'] = DB::table('categories')->get();
-        $data['jobs'] = [];
+        $data['jobs'] = DB::table('jobs')->orderByDesc('id')->paginate(20);
 
         return view('visitor.job', $data);
+    }
+
+    public function detailJob($id)
+    {
+        $data['title'] = 'Detail Job Vacancy';
+        $data['categories'] = DB::table('categories')->get();
+        $data['job'] = DB::table('jobs')->where('id', $id)->get()[0];
+
+        return view('visitor.detail-job', $data);
     }
 
     public function download()
@@ -158,9 +167,11 @@ class VisitorController extends Controller
     {
         $admins = DB::table('users')->get();
 
-        foreach ($admins as $admin) {
-            Mail::send(new ContactMail($request, $admin));
+    foreach ($admins as $admin) {
+        Mail::send(new ContactMail($request, $admin));
         }
+
+        return back()->with('status', 'Pesan Berhasil Dikirim');
     }
 
     public function newsDetail($id)

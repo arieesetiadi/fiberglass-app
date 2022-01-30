@@ -52,7 +52,7 @@ $logo = DB::table('logos')
                                         </div>
 
                                         <div class="p-2 mt-5">
-                                            <form class="" action="{{ route('daftar') }}" method="POST">
+                                            <form class="" action="/daftar" method="POST">
                                                 @csrf
                                                 <div class="auth-form-group-custom mb-4">
                                                     <i class="ri-mail-line auti-custom-input-icon"></i>
