@@ -62,7 +62,7 @@ $logo = DB::table('logos')
     </style>
 
     <!-- Chatra {literal} -->
-    <script>
+    {{-- <script>
         (function(d, w, c) {
             w.ChatraID = '6ZBcuLWc8GivFTrdw';
             var s = d.createElement('script');
@@ -73,7 +73,7 @@ $logo = DB::table('logos')
             s.src = 'https://call.chatra.io/chatra.js';
             if (d.head) d.head.appendChild(s);
         })(document, window, 'Chatra');
-    </script>
+    </script> --}}
     <!-- /Chatra {/literal} -->
 </head>
 
@@ -330,6 +330,8 @@ $logo = DB::table('logos')
         }
     </script> --}}
 
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <div class="elfsight-app-cb773324-8132-4863-9972-3124736dd346"></div>
 </body>
 
 </html>
