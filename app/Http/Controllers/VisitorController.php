@@ -167,8 +167,8 @@ class VisitorController extends Controller
     {
         $admins = DB::table('users')->get();
 
-    foreach ($admins as $admin) {
-        Mail::send(new ContactMail($request, $admin));
+        foreach ($admins as $admin) {
+            Mail::send(new ContactMail($request, $admin));
         }
 
         return back()->with('status', 'Pesan Berhasil Dikirim');

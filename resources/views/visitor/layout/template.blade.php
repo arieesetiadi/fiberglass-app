@@ -55,6 +55,10 @@ $logo = DB::table('logos')
             line-height: 25px;
         }
 
+        .goog-te-combo {
+            height: 25px
+        }
+
     </style>
 
     <!-- Chatra {literal} -->
@@ -77,16 +81,16 @@ $logo = DB::table('logos')
     <div class="top-bar top-bar-type1">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-12 d-lg-flex align-items-center">
+                <div class="col-md-8 col-5 d-lg-flex align-items-center">
                     <ul class="flat-information flat-information-type1">
                         <li class="email"><a href="{{ route('login') }}" title="Email">Administrator</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 col-12 d-flex justify-content-md-end justify-content-center">
+                <div class="col-md-4 col-7 d-flex justify-content-md-end justify-content-center">
                     <div class="language-name">
                         <div class="col-lg-12" id="google_translate_element">
                         </div>
-                        <script type="text/javascript">
+                        {{-- <script type="text/javascript">
                             // <![CDATA[
                             function googleTranslateElementInit() {
                                 new google.translate.TranslateElement({
@@ -95,6 +99,13 @@ $logo = DB::table('logos')
                                 }, 'google_translate_element');
                             }
                             // ]]>
+                        </script> --}}
+                        <script type="text/javascript">
+                            function googleTranslateElementInit() {
+                                new google.translate.TranslateElement({
+                                    // pageLanguage: 'id'
+                                }, 'google_translate_element');
+                            }
                         </script>
                         <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript">
                         </script>

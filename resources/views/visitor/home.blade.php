@@ -54,7 +54,7 @@
     {{-- Visi Misi --}}
     <section class="features my-5 py-5">
         <div class="container d-lg-flex">
-            <div class="iconbox-features hv-background-before shadow-none rounded active">
+            <div class="iconbox-features mx-4 hv-background-before shadow-none rounded active">
                 <div class="iconbox-icon"><span class="icon-shield"></span></div>
                 <div class="iconbox-content px-5">
                     <h3 class="title">Visi</h3>
@@ -65,7 +65,7 @@
                     </p>
                 </div>
             </div>
-            <div class="iconbox-features hv-background-before shadow-none rounded border">
+            <div class="iconbox-features mx-4 hv-background-before shadow-none rounded border">
                 <div class="iconbox-icon"><span class="icon-alarm"></span></div>
                 <div class="iconbox-content px-5">
                     <h3 class="title">Misi</h3>
@@ -80,19 +80,12 @@
         </div>
     </section><!-- features -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <hr>
-            </div>
-        </div>
-    </div>
 
     {{-- Premium Quality --}}
     <section class="features my-5 py-5">
         <div class="container d-lg-flex">
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-4 my-2 px-5">
                     <div class="iconbox-features shadow-none border">
                         {{-- <div class="iconbox-icon"> --}}
                         {{-- <span class="icon-shield"></span> --}}
@@ -107,7 +100,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 my-2 px-5">
                     <div class="iconbox-features shadow-none border">
                         {{-- <div class="iconbox-icon"><span class="icon-alarm"></span></div> --}}
                         <img src="{{ asset('assets-3/images/service.jpeg') }}" alt="Guaranteed"
@@ -121,7 +114,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 my-2 px-5">
                     <div class="iconbox-features shadow-none border">
                         {{-- <div class="iconbox-icon"><span class="icon-alarm"></span></div> --}}
                         <img src="{{ asset('assets-3/images/guaranteed.jpeg') }}" alt="Guaranteed"
@@ -139,17 +132,10 @@
         </div>
     </section><!-- features -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <hr>
-            </div>
-        </div>
-    </div>
 
     {{-- Mengapa memilih kami --}}
     <section class="features my-5 py-5">
-        <h1 class="text-center text-dark font-weight-bold mb-5">MENGAPA MEMILIH KAMI ?</h1>
+        <h1 class="text-center text-dark font-weight-bold mb-5 mx-4">MENGAPA MEMILIH KAMI ?</h1>
         <div class="container">
             <div class="row d-flex align-items-center">
                 <div class="col-lg-4">
@@ -196,13 +182,6 @@
         </div>
     </section><!-- who-we-are -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <hr>
-            </div>
-        </div>
-    </div>
 
     {{-- Berita Terkini --}}
     <section class="features my-5 py-5">
@@ -210,7 +189,7 @@
         <div class="container">
             <div class="row">
                 @forelse ($news as $new)
-                    <div class="col-lg-4 mt-lg-5 pt-5">
+                    <div class="col-lg-4 mt-lg-5 pt-5 px-4">
                         <div class="w-100 p-5 border rounded">
                             <div class="">
                                 <h5 class="h5 text-dark">{{ $new->title }}</h5>
@@ -245,21 +224,14 @@
         </div>
     </section>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <hr>
-            </div>
-        </div>
-    </div>
 
     <section class="features my-5 py-5">
         <h1 class="text-center text-dark font-weight-bold">PENGUNJUNG</h1>
         <div class="container pt-5">
             <div class="row my-5">
-                <div class="counter counter-type2 col-lg-4 col-sm-12">
+                <div class="counter counter-type2 col-lg-4 col-12">
                     <center>
-                        <div class="content-counter hv-background-before">
+                        <div class="content-counter hv-background-before" style="width: 300px">
                             <div class="icon-count"><span class="icon-portfolio"></span></div>
                             <div class="numb-count-wrap">
                                 <span class="numb-count font-weight-light" data-from="0" data-to="{{ $totalVisitors }}"
@@ -269,9 +241,9 @@
                         </div>
                     </center>
                 </div>
-                <div class="counter counter-type2 col-lg-4 col-sm-12">
+                <div class="counter counter-type2 col-lg-4 col-12">
                     <center>
-                        <div class="content-counter hv-background-before">
+                        <div class="content-counter hv-background-before" style="width: 300px">
                             <div class="icon-count"><span class="icon-observation"></span></div>
                             <div class="numb-count-wrap">
                                 <span class="numb-count font-weight-light" data-from="0" data-to="{{ $todayVisitors }}"
@@ -281,9 +253,9 @@
                         </div>
                     </center>
                 </div>
-                <div class="counter counter-type2 col-lg-4 col-sm-12">
+                <div class="counter counter-type2 col-lg-4 col-12">
                     <center>
-                        <div class="content-counter hv-background-before">
+                        <div class="content-counter hv-background-before" style="width: 300px">
                             <div class="icon-count"><span class="icon-spam"></span></div>
                             <div class="numb-count-wrap">
                                 <span class="numb-count font-weight-light" data-from="0" data-to="{{ $monthVisitors }}"

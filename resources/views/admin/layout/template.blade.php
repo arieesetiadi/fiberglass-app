@@ -86,9 +86,9 @@ $logo = DB::table('logos')
 
 
     <!-- Bootstrap bundle JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
         integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
     <script src="{{ asset('assets-2/js/bootstrap.bundle.min.js') }}"></script>
     <!--plugins-->
     {{-- <script src="{{ asset('assets-2/plugins/simplebar/js/simplebar.min.js') }}"></script> --}}
