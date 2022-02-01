@@ -9,10 +9,12 @@ use Illuminate\Support\Facades\Mail;
 
 class VisitorController extends Controller
 {
-    public function home()
+    public function __construct()
     {
         GeoController::storeVisitor();
-
+    }
+    public function home()
+    {
         $data['title'] = 'Home';
         $data['totalVisitors'] = DB::table('visitors')->count();
         $data['todayVisitors'] = DB::table('visitors')

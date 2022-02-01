@@ -59,6 +59,26 @@ $logo = DB::table('logos')
             height: 25px
         }
 
+        body>.skiptranslate {
+            display: none;
+        }
+
+        body {
+            top: 0px !important;
+        }
+
+        .modal-answer ol {
+            list-style: decimal;
+            list-style-position: outside;
+            margin-left: 20px;
+        }
+
+        .modal-answer ul {
+            list-style: circle;
+            list-style-position: outside;
+            margin-left: 20px;
+        }
+
     </style>
 
     <!-- Chatra {literal} -->
@@ -103,7 +123,7 @@ $logo = DB::table('logos')
                         <script type="text/javascript">
                             function googleTranslateElementInit() {
                                 new google.translate.TranslateElement({
-                                    // pageLanguage: 'id'
+                                    // pageLanguage: 'en'
                                 }, 'google_translate_element');
                             }
                         </script>

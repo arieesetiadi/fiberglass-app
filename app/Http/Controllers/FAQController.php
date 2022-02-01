@@ -87,6 +87,7 @@ class FAQController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request->answer);
         DB::table('faqs')->where('id', $id)->update([
             'question' => $request->question,
             'answer' => $request->answer,

@@ -57,7 +57,7 @@
                 <hr>
             @endforeach
         @else
-            <h1>Content not available</h1>
+            <h1 class="my-5">Content not available</h1>
         @endif
 
         @if (isset($downloads1))
@@ -84,7 +84,7 @@
                 <hr>
             @endforeach
         @else
-            <h1>Content not available</h1>
+            <h1></h1>
         @endif
 
 

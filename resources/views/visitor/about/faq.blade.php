@@ -41,7 +41,7 @@
                                         <h5 class="modal-title text-dark font-weight-bold" id="faq-modal-title">
                                             {{ $faq->question }}</h5>
                                     </div>
-                                    <div id="faq-modal-body-{{ $i }}" class="p-4">
+                                    <div id="faq-modal-body-{{ $i }}" class="modal-answer p-4">
                                         {!! $faq->answer !!}
                                     </div>
                                     <div class="modal-footer">
