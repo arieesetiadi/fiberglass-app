@@ -23,7 +23,7 @@
                     </div>
                 </div>
             @empty
-                <h1>Arsip tidak tersedia</h1>
+                <h6>Arsip tidak tersedia</h6>
             @endforelse
         </div>
     </div>

@@ -24,6 +24,18 @@
                 <div class="col-lg-3 my-2">
                     <div class="card">
                         <div class="card-body">
+                            <center style="height: 100px" class="d-flex align-items-center p-5 justify-content-center">
+                                @if ($investor->image)
+                                    <img style="height: 95px"
+                                        src="{{ asset('assets/images/brands/') . '/' . $investor->image }}"
+                                        alt="{{ $investor->name }}" class="rounded">
+                                @else
+                                    <h2 class="text-center text-dark">
+                                        {{ strtoupper($investor->name) }}
+                                    </h2>
+                                @endif
+                            </center>
+                            <hr>
                             <center>
                                 {{ $investor->name }}
                             </center>
