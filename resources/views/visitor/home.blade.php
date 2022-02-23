@@ -57,7 +57,7 @@
             <div class="iconbox-features mx-4 hv-background-before shadow-none rounded active">
                 <div class="iconbox-icon"><span class="icon-shield"></span></div>
                 <div class="iconbox-content px-5">
-                    <h3 class="title text-capitalize">Vission</h3>
+                    <h3 class="title text-capitalize">Vision</h3>
                     <p class="text-justify">
                         Menjadi salah satu pabrik fiberglass terbesar di Indonesia untuk memberikan kontribusi maksimal bagi
                         tumbuh dan berkembangnya berbagai sektor industri di Indonesia pada khususnya dan berkontribusi
