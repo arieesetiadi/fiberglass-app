@@ -21,18 +21,18 @@
         <h1 class="text-center text-dark font-weight-bold my-5">Our Partners (Brands)</h1>
         <div class="row mb-5">
             @foreach ($investors as $investor)
-                <div class="col-lg-3 my-2">
+                <div class="col-lg-4 my-2">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="shadow-sm card-body">
                             <center style="height: 100px" class="d-flex align-items-center p-5 justify-content-center">
                                 @if ($investor->image)
                                     <img style="height: 95px"
                                         src="{{ asset('assets/images/brands/') . '/' . $investor->image }}"
                                         alt="{{ $investor->name }}" class="rounded">
                                 @else
-                                    <h2 class="text-center text-dark">
+                                    <h4 class="text-center text-dark">
                                         {{ strtoupper($investor->name) }}
-                                    </h2>
+                                    </h4>
                                 @endif
                             </center>
                             <hr>
@@ -44,13 +44,13 @@
                 </div>
             @endforeach
         </div>
-        <hr>
-        <h1 class="text-center text-dark font-weight-bold my-5">Soon</h1>
+        {{-- <hr> --}}
+        {{-- <h1 class="text-center text-dark font-weight-bold my-5">Soon</h1>
         <div class="row mb-5">
             @foreach ($investorsSoon as $investor)
-                <div class="col-lg-3 my-2">
+                <div class="col-lg-4 my-2">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="shadow-sm card-body">
                             <center>
                                 {{ $investor->name }}
                             </center>
@@ -58,6 +58,6 @@
                     </div>
                 </div>
             @endforeach
-        </div>
+        </div> --}}
     </div>
 @endsection
