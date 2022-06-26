@@ -20,7 +20,6 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
-
     </style>
     <div class="page-title position-relative clearfix bg-primary">
         <div class="section-overlay"></div>
@@ -56,31 +55,31 @@
                 </div>
                 <hr>
             @endforeach
-        @else
-            <h1 class="my-5">Content not available</h1>
         @endif
 
         @if (isset($downloads1))
             @foreach ($categories1 as $cCategory)
-                <h1 class="my-4 text-dark">{{ $cCategory }}</h1>
-                <div class="row my-4">
-                    @foreach ($downloads1[$cCategory] as $item)
-                        <div class="col-lg-2">
-                            <center>
-                                <a target="_blank" href="{{ asset('downloadable') . '/' . $item->content }}"
-                                    class="my-3 d-inline-block">
-                                    @if ($item->category == 'Kartu Nama')
-                                        <img src="{{ asset('downloadable') . '/' . $item->content }}"
-                                            alt="{{ $item->category }}" class="rounded w-100 my-2">
-                                    @endif
-                                    <p class="d-inline-block mt-1 mb-2">
-                                        {{ $item->name }}
-                                    </p>
-                                </a>
-                            </center>
-                        </div>
-                    @endforeach
-                </div>
+                @if (isset($downloads1[$cCategory]))
+                    <h1 class="my-4 text-dark">{{ $cCategory }}</h1>
+                    <div class="row my-4">
+                        @foreach ($downloads1[$cCategory] as $item)
+                            <div class="col-lg-2">
+                                <center>
+                                    <a target="_blank" href="{{ asset('downloadable') . '/' . $item->content }}"
+                                        class="my-3 d-inline-block">
+                                        @if ($item->category == 'Kartu Nama')
+                                            <img src="{{ asset('downloadable') . '/' . $item->content }}"
+                                                alt="{{ $item->category }}" class="rounded w-100 my-2">
+                                        @endif
+                                        <p class="d-inline-block mt-1 mb-2">
+                                            {{ $item->name }}
+                                        </p>
+                                    </a>
+                                </center>
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
                 <hr>
             @endforeach
         @else

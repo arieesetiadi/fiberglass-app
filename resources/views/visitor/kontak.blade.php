@@ -20,9 +20,6 @@
                         <div class="text-contact">Jangan ragu untuk <a>menghubungi kami untuk informasi
                                 apapun.</a></div>
                         <div class="my-5">
-                            <p class="text-dark">
-                                <strong>Segera Hadir</strong> cabang kami di Semarang
-                            </p>
                             <p class="text-dark"><strong>Our Factory</strong> : Tegal Alur, Tangerang</p>
                             <p class="text-dark"><strong>Office</strong> : Jakarta Pusat</p>
                         </div>
